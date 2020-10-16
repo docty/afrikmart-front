@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
+import { FormsModule } from '@angular/forms';
 import { DashboardModule } from '../dashboard.module';
 import { ProductRoutingModule } from './product-routing.module';
 import { MaterialListComponent } from './material-list/material-list.component';
@@ -13,7 +13,7 @@ import { StyleAddComponent } from './style-add/style-add.component';
   declarations: [MaterialListComponent, MaterialAddComponent, StyleListComponent, StyleAddComponent],
   imports: [
     CommonModule,
-    ProductRoutingModule, DashboardModule
+    ProductRoutingModule, DashboardModule, FormsModule
   ]
 })
 export class ProductModule { }

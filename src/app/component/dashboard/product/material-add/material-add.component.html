@@ -73,7 +73,7 @@
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label class="control-label">Category</label>
-                                                    <select class="form-control select2"  name="category">
+                                                    <select class="form-control select2"  name="category" [(ngModel)]="dataValue.category" id="category">
                                                         <option>Select</option>
                                                         <option value="GTP">GTP</option>
                                                         <option value="Woodin">Woodin</option>
@@ -85,7 +85,7 @@
                                                 <div class="form-group">
                                                     <label class="control-label">Tag</label>
     
-                                                    <select class="select2 form-control select2-multiple" multiple="multiple" data-placeholder="Choose ...">
+                                                    <select class="select2 form-control select2-multiple" multiple="multiple" data-placeholder="Choose ..." name="tag" [(ngModel)]="dataValue.tag" id="tag">
                                                         <option value="Wedding" >Wedding</option>
                                                         <option value="Dinner" >Dinner</option>
                                                         <option value="Church" selected>Church</option>
@@ -98,7 +98,7 @@
 
                                         <div class="form-group mb-0">
                                             <label for="productdesc">Product Description</label>
-                                            <textarea class="form-control" id="productdesc" rows="4"></textarea name="description" [(ngModel)]="dataValue.description">
+                                            <textarea class="form-control" id="productdesc" rows="4" name="description" [(ngModel)]="dataValue.description"></textarea>
                                         </div>
                                     </form>
                                 </div>
@@ -198,16 +198,16 @@
                     </div>
                 </div>
             </div>
-            <!-- end row -->
+            
 
             <div class="row mb-4">
                 <div class="col text-right">
                     <a href="#" class="btn btn-danger"> <i class="uil uil-times mr-1"></i> Cancel </a>
-                    <a href="#" class="btn btn-success"> <i class="uil uil-file-alt mr-1"></i> Save </a>
-                </div> <!-- end col -->
-            </div> <!-- end row-->
+                    <a href="javascript:void(0)" (click)="onSaveMaterial()" class="btn btn-success"> <i class="uil uil-file-alt mr-1"></i> Save </a>
+                </div>
+            </div>
             
-        </div> <!-- container-fluid -->
+        </div>
     </div>
 </div>
             

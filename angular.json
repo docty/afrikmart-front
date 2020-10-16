@@ -41,6 +41,7 @@
                 "src/assets/libs/jquery.counterup/jquery.counterup.min.js",
                 "src/assets/libs/apexcharts/apexcharts.min.js",
                 "src/assets/libs/datatables.net/js/jquery.dataTables.min.js",
+                "src/assets/libs/datatables.net-bs4/js/dataTables.bootstrap4.min.js",
                 "src/assets/libs/dropzone/min/dropzone.min.js",
                 "src/assets/libs/select2/js/select2.min.js",
                 "src/assets/js/pages/dashboard.init.js",

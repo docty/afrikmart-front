@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { StyleComponent } from './style.component';
+import { StyleAddComponent } from './style-add.component';
 
-describe('StyleComponent', () => {
-  let component: StyleComponent;
-  let fixture: ComponentFixture<StyleComponent>;
+describe('StyleAddComponent', () => {
+  let component: StyleAddComponent;
+  let fixture: ComponentFixture<StyleAddComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ StyleComponent ]
+      declarations: [ StyleAddComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(StyleComponent);
+    fixture = TestBed.createComponent(StyleAddComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

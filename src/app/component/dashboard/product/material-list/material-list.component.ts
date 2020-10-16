@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {ProductService} from '../../../../service/product.service';
 declare var $: any;
 @Component({
   selector: 'app-material-list',
@@ -7,10 +8,17 @@ declare var $: any;
 })
 export class MaterialListComponent implements OnInit {
 
-  constructor() { }
+  data : any;
+  constructor(private productService: ProductService) { }
 
   ngOnInit(): void {
-  	$("#datatable").DataTable();
-  }
+  	this.productService.indexMaterial().subscribe(m => 
+    {
+      this.data = m;
+      setTimeout(() => $('#datatable').DataTable(), 1000);
+    });
+  	
+  	
+  } 
 
 }

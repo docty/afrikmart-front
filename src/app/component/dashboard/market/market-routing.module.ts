@@ -1,14 +1,17 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { MaterialComponent } from './material/material.component';
-import { StyleComponent } from './style/style.component';
-
+import { MaterialListComponent } from './material-list/material-list.component';
+import { MaterialAddComponent } from './material-add/material-add.component';
+import { StyleListComponent } from './style-list/style-list.component';
+import { StyleAddComponent } from './style-add/style-add.component';
 
 
 
 const routes: Routes = [
-	{path: 'material', component: MaterialComponent},
-	{path: 'style', component: StyleComponent}
+	{path: 'material', component: MaterialListComponent},
+	{path: 'material/add', component: MaterialAddComponent},
+	{path: 'style', component: StyleListComponent},
+	{path: 'style/add', component: StyleAddComponent}
 ];
 
 @NgModule({

@@ -11,8 +11,8 @@ import { SiderComponent } from './sider/sider.component';
   declarations: [HomeComponent, HeaderComponent, SiderComponent],
   imports: [
     CommonModule,
-    DashboardRoutingModule,FormsModule
+    DashboardRoutingModule
   ],
-  exports: [HeaderComponent, SiderComponent]
+  exports: [HeaderComponent, SiderComponent, FormsModule]
 })
 export class DashboardModule { }

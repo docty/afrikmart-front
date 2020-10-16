@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 import { DashboardModule } from '../dashboard.module';
 import { EntriesRoutingModule } from './entries-routing.module';
 import { StaffAddComponent } from './staff-add/staff-add.component';
@@ -12,7 +13,7 @@ import { CustomerAddComponent } from './customer-add/customer-add.component';
   declarations: [StaffAddComponent, StaffListComponent, CustomerListComponent, CustomerAddComponent],
   imports: [
     CommonModule,
-    EntriesRoutingModule, DashboardModule
+    EntriesRoutingModule, DashboardModule, FormsModule
   ]
 })
 export class EntriesModule { }
