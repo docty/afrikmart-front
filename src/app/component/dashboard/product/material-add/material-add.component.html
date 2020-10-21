@@ -53,19 +53,28 @@
                                         <div class="form-group">
                                             <label for="materialName">Material Name</label>
                                             <input id="materialName" name="materialName" type="text" class="form-control" [(ngModel)]="dataValue.materialName">
+                                            <span style="color:red; margin-left: 18%; font-style: italic;">{{errorMessage.materialName}}</span>
                                         </div>
                                         <div class="row">
-                                            <div class="col-lg-6">
+                                            <div class="col-md-4">
                                                 
                                                 <div class="form-group">
                                                     <label for="manufacturerBrand">Manufacturer Brand</label>
                                                     <input id="manufacturerBrand" name="manufacturerBrand" type="text" class="form-control" [(ngModel)]="dataValue.manufacturerBrand">
                                                 </div>
                                             </div>
-                                            <div class="col-lg-6">
+                                            <div class="col-md-4">
                                                 <div class="form-group">
                                                     <label for="price">Price</label>
                                                     <input id="price" name="price" type="text" class="form-control" [(ngModel)]="dataValue.price">
+                                                    <span style="color:red; margin-left: 18%; font-style: italic;">{{errorMessage.price}}</span>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label for="price">Quantity</label>
+                                                    <input id="quantity" name="quantity" type="text" class="form-control" [(ngModel)]="dataValue.quantity">
+                                                    <span style="color:red; margin-left: 18%; font-style: italic;">{{errorMessage.quantity}}</span>
                                                 </div>
                                             </div>
                                         </div>
@@ -79,6 +88,7 @@
                                                         <option value="Woodin">Woodin</option>
                                                         <option value="Holland">Holland</option>
                                                     </select>
+                                                    <span style="color:red; margin-left: 18%; font-style: italic;">{{errorMessage.category}}</span>
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
@@ -158,7 +168,7 @@
                                             </div>
                                         </div>
                                         <div class="media-body overflow-hidden">
-                                            <h5 class="font-size-16 mb-1">Meta Data</h5>
+                                            <h5 class="font-size-16 mb-1">Customer Data</h5>
                                             <p class="text-muted text-truncate mb-0">Fill all information below</p>
                                         </div>
                                         <i class="mdi mdi-chevron-up accor-down-icon font-size-24"></i>
@@ -173,24 +183,26 @@
                                         <div class="row">
                                             <div class="col-sm-6">
                                                 <div class="form-group">
-                                                    <label for="metatitle">Meta title</label>
-                                                    <input id="metatitle" name="metatitle" type="text" class="form-control">
+                                                    <label for="metatitle">Customer Name</label>
+                                                    <input id="metatitle" name="customerName" type="text" class="form-control" [(ngModel)]="dataValue.customerName">
+                                                    <span style="color:red; margin-left: 18%; font-style: italic;">{{errorMessage.customerName}}</span>
                                                 </div>
                                                 
                                             </div>
     
                                             <div class="col-sm-6">
                                                 <div class="form-group">
-                                                    <label for="metakeywords">Meta Keywords</label>
-                                                    <input id="metakeywords" name="metakeywords" type="text" class="form-control">
+                                                    <label for="metakeywords">Customer Identity Number</label>
+                                                    <input id="metakeywords" name="customerId" type="text" class="form-control" [(ngModel)]="dataValue.customerId">
+                                                    <span style="color:red; margin-left: 18%; font-style: italic;">{{errorMessage.customerId}}</span>
                                                 </div>
                                             </div>
                                         </div>
 
-                                        <div class="form-group mb-0">
+                                        <!-- <div class="form-group mb-0">
                                             <label for="metadescription">Meta Description</label>
                                             <textarea class="form-control" id="metadescription" rows="4"></textarea>
-                                        </div>
+                                        </div> -->
                                     </form>
                                 </div>
                             </div>
@@ -202,8 +214,11 @@
 
             <div class="row mb-4">
                 <div class="col text-right">
-                    <a href="#" class="btn btn-danger"> <i class="uil uil-times mr-1"></i> Cancel </a>
+                    <a href="#" class="btn btn-danger"> <i class="uil uil-times mr-1"></i> Clear All </a>
                     <a href="javascript:void(0)" (click)="onSaveMaterial()" class="btn btn-success"> <i class="uil uil-file-alt mr-1"></i> Save </a>
+                    <div class="spinner-border text-secondary" style="margin: 0px 10px; display: none"  role="status">
+                        <span class="sr-only">Loading...</span>
+                    </div>
                 </div>
             </div>
             

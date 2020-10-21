@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {StaffService} from '../../../../service/staff.service';
+import {Router} from '@angular/router';
+declare var $: any;
 
 @Component({
   selector: 'app-staff-add',
@@ -16,14 +18,31 @@ export class StaffAddComponent implements OnInit {
 	  	gender : 'Female',
 	  	dateCreated : ''
 	}
-  constructor(private staffService: StaffService) { }
+
+  errorMessage: any = {
+    otherName: '',
+    surname: '',
+    telephone: '',
+    email : ''
+  }
+
+  constructor(private staffService: StaffService, private router: Router) { }
 
   ngOnInit(): void {
   }
 
   submitData(){
-  	this.staffService.store(this.dataValue).subscribe(m => console.log(m));
-  	
+    $('.spinner-border').css('display', 'inline-block');
+  	this.staffService.store(this.dataValue).subscribe(
+      (data: any) => {
+          if(data.error){
+            $('.spinner-border').css('display', 'none');
+            this.errorMessage = data.error;
+          }else{
+            this.router.navigateByUrl('/v1/entries/staff');
+          }
+      }
+    );
   }
 
 }

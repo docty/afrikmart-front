@@ -4,5 +4,8 @@ export interface ProductMaterial{
   	price : '',
   	category : '',
   	description : '',
-  	tag : ''
+  	tag : '',
+  	quantity : '',
+  	customerName: '',
+    customerId: ''
 }

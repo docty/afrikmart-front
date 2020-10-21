@@ -18,4 +18,16 @@ export class StaffService {
   store(data){
     return this.httpClient.post(`${this.uri}/staff`, data);
   }
+
+  show(id){
+    return this.httpClient.get(`${this.uri}/staff/${id}`);
+  }
+
+  update(id, data){
+    return this.httpClient.put(`${this.uri}/staff/${id}`, data);
+  }
+
+  delete(id){
+    return this.httpClient.delete(`${this.uri}/staff/${id}`);
+  }
 }

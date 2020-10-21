@@ -34,39 +34,6 @@
                         <span>Dashboard</span>
                     </a>
                 </li>
-                <li class="menu-title">Products</li>
-                <li>
-                    <a href="javascript: void(0);" class="has-arrow waves-effect">
-                        <i class="uil-store"></i>
-                        <span>Materials</span>
-                    </a>
-                    <ul class="sub-menu" aria-expanded="false">
-                        <li><a [routerLink]="['/v1/product/material/add']">Add</a></li>
-                        <li><a [routerLink]="['/v1/product/material']">List</a></li>
-                    </ul>
-                </li>
-
-                <li>
-                    <a href="javascript: void(0);" class="has-arrow waves-effect">
-                        <i class="uil-store"></i>
-                        <span>Styles</span>
-                    </a>
-                    <ul class="sub-menu" aria-expanded="false">
-                        <li><a [routerLink]="['/v1/product/style/add']">Add</a></li>
-                        <li><a [routerLink]="['/v1/product/style']">List</a></li>
-                    </ul>
-                </li>
-                <li class="menu-title">Orders</li>
-                <li>
-                    <a href="javascript: void(0);" class="has-arrow waves-effect">
-                        <i class="uil-store"></i>
-                        <span>Orders</span>
-                    </a>
-                    <ul class="sub-menu" aria-expanded="false">
-                        <li><a [routerLink]="['/v1/order/pending']">Pending</a></li>
-                        <li><a [routerLink]="['/v1/order/complete']">Complete</a></li>
-                    </ul>
-                </li>
                 <li class="menu-title">Entries</li>
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
@@ -109,6 +76,40 @@
                         <li><a [routerLink]="['/v1/market/style']">List</a></li>
                     </ul>
                 </li>
+                <li class="menu-title">Products</li>
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                        <i class="uil-store"></i>
+                        <span>Materials</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="false">
+                        <li><a [routerLink]="['/v1/product/material/add']">Add</a></li>
+                        <li><a [routerLink]="['/v1/product/material']">List</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                        <i class="uil-store"></i>
+                        <span>Styles</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="false">
+                        <li><a [routerLink]="['/v1/product/style/add']">Add</a></li>
+                        <li><a [routerLink]="['/v1/product/style']">List</a></li>
+                    </ul>
+                </li>
+                <li class="menu-title">Orders</li>
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                        <i class="uil-store"></i>
+                        <span>Orders</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="false">
+                        <li><a [routerLink]="['/v1/order/pending']">Pending</a></li>
+                        <li><a [routerLink]="['/v1/order/complete']">Complete</a></li>
+                    </ul>
+                </li>
+                
+                
             </ul>
         </div>
     </div>

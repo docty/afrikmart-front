@@ -27,6 +27,7 @@
               "src/assets/css/bootstrap-dark.min.css",
               "src/assets/css/icons.min.css",
               "src/assets/css/app-dark.min.css",
+              "src/assets/libs/sweetalert2/sweetalert2.min.css",
               "src/assets/libs/dropzone/min/dropzone.min.css",
               "src/assets/libs/select2/css/select2.min.css",
               "src/assets/css/styles.css"
@@ -37,6 +38,7 @@
                 "src/assets/libs/metismenu/metisMenu.min.js",
                 "src/assets/libs/simplebar/simplebar.min.js",
                 "src/assets/libs/node-waves/waves.min.js",
+                "src/assets/libs/sweetalert2/sweetalert2.min.js",
                 "src/assets/libs/waypoints/lib/jquery.waypoints.min.js",
                 "src/assets/libs/jquery.counterup/jquery.counterup.min.js",
                 "src/assets/libs/apexcharts/apexcharts.min.js",

@@ -9,12 +9,12 @@
             <div class="row">
                 <div class="col-12">
                     <div class="page-title-box d-flex align-items-center justify-content-between">
-                        <h4 class="mb-0">Add Customer</h4>
+                        <h4 class="mb-0">Edit Staff</h4>
 
                         <div class="page-title-right">
                             <ol class="breadcrumb m-0">
-                                <li class="breadcrumb-item"><a href="javascript: void(0);">Customer</a></li>
-                                <li class="breadcrumb-item active">Add</li>
+                                <li class="breadcrumb-item"><a href="javascript: void(0);">Staff</a></li>
+                                <li class="breadcrumb-item active">Edit</li>
                             </ol>
                         </div>
 
@@ -25,20 +25,20 @@
             <div class="row">
                 <div class="col-12">
                 	<div>
-                        <a type="button" class="btn btn-success waves-effect waves-light mb-3" [routerLink]="['/v1/entries/customer']"><i class="mdi mdi-plus mr-1"></i> List Customer</a> 
+                        <a type="button" class="btn btn-success waves-effect waves-light mb-3" [routerLink]="['/v1/entries/staff']"><i class="mdi mdi-plus mr-1"></i> List Staff</a> 
                     </div>
                     <div class="card">
                         <div class="card-body">
 
                             <div class="form-group row">
-                                <label for="example-text-input" class="col-md-2 col-form-label">Surname**</label>
+                                <label for="example-text-input" class="col-md-2 col-form-label">Surname</label>
                                 <div class="col-md-10">
                                     <input class="form-control" type="text" placeholder="Enter Surname" id="example-text-input" [(ngModel)]="dataValue.surname" name="surname">
                                 </div>
                                 <span style="color:red; margin-left: 18%; font-style: italic;">{{errorMessage.surname}}</span>
                             </div>
                             <div class="form-group row">
-                                <label for="example-search-input" class="col-md-2 col-form-label">Other Name**</label>
+                                <label for="example-search-input" class="col-md-2 col-form-label">Other Name</label>
                                 <div class="col-md-10">
                                     <input class="form-control" type="search" placeholder="Enter Other Name" id="example-search-input" [(ngModel)]="dataValue.otherName" name="otherName">
                                 </div>
@@ -49,15 +49,24 @@
                                 <div class="col-md-10">
                                     <input class="form-control" type="email" placeholder="Enter Email" id="example-email-input" [(ngModel)]="dataValue.email" name="email">
                                 </div>
+                                <span style="color:red; margin-left: 18%; font-style: italic;">{{errorMessage.email}}</span>
                             </div>
                             
                             <div class="form-group row">
-                                <label for="example-tel-input" class="col-md-2 col-form-label">Telephone**</label>
+                                <label for="example-tel-input" class="col-md-2 col-form-label">Telephone</label>
                                 <div class="col-md-10">
                                     <input class="form-control" type="tel" placeholder="Enter Telephone" id="example-tel-input" [(ngModel)]="dataValue.telephone" name="telephone">
                                 </div>
                                 <span style="color:red; margin-left: 18%; font-style: italic;">{{errorMessage.telephone}}</span>
                             </div>
+                            
+                            <!-- <div class="form-group row">
+                                <label for="example-date-input" class="col-md-2 col-form-label">Date Joined</label>
+                                <div class="col-md-10">
+                                    <input class="form-control" type="date" value="2019-08-19" id="example-date-input" [(ngModel)]="dataValue.dateCreated" name="dateCreated">
+                                </div>
+                            </div> -->
+                            
                             
                             <div class="form-group row">
                                 <label class="col-md-2 col-form-label">Gender</label>
@@ -69,10 +78,10 @@
                                 </div>
                             </div>
 
-                            <div class="form-group row">
+                            <div class="form-group row"> 
                                 <label class="col-md-2 col-form-label"></label>
                                 <div class="col-md-10">
-                                    <button class="btn btn-primary" (click)="submitData()">SAVE</button>
+                                    <button class="btn btn-primary" (click)="onUpdate()">UPDATE</button>
                                     <div class="spinner-border text-secondary" style="margin: 0px 10px; display: none"  role="status">
                                         <span class="sr-only">Loading...</span>
                                     </div>

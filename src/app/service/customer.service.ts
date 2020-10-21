@@ -17,4 +17,16 @@ export class CustomerService {
   store(data){
     return this.httpClient.post(`${this.uri}/customer`, data);
   }
+
+  show(id){
+    return this.httpClient.get(`${this.uri}/customer/${id}`);
+  }
+
+  update(id, data){
+    return this.httpClient.put(`${this.uri}/customer/${id}`, data);
+  }
+
+  delete(id){
+    return this.httpClient.delete(`${this.uri}/customer/${id}`);
+  }
 }

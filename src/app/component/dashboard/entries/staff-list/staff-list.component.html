@@ -46,7 +46,7 @@
                                     <tr *ngFor="let item of data">
                                         <td><a href="javascript: void(0);" class="text-dark font-weight-bold">{{item.staffId}}</a> </td>
                                         <td>
-                                            <img src="assets/images/users/avatar-2.jpg" alt="" class="avatar-xs rounded-circle mr-2">
+                                            <!-- <img src="assets/images/users/avatar-2.jpg" alt="" class="avatar-xs rounded-circle mr-2"> -->
                                             <span>{{item.surname}} {{item.otherName}}</span>
                                         </td>
                                         <td>{{item.email}}</td>
@@ -58,13 +58,16 @@
                                             {{item.telephone}}
                                         </td>
                                         <td>
-                                            <a href="javascript:void(0);" class="px-3 text-primary" data-toggle="tooltip" data-placement="top" title="Edit"><i class="uil uil-pen font-size-18"></i></a>
-                                            <a href="javascript:void(0);" class="px-3 text-danger" data-toggle="tooltip" data-placement="top" title="Delete"><i class="uil uil-trash-alt font-size-18"></i></a>
+                                            <a [routerLink]="['/v1/entries/staff', item.urlId]" class="px-1 text-info" data-toggle="tooltip" data-placement="top" title="Profile"><i class="uil uil-book font-size-18"></i></a>
+                                            <a [routerLink]="['/v1/entries/staff', item.urlId, 'edit']" class="px-1 text-primary" data-toggle="tooltip" data-placement="top" title="Edit"><i class="uil uil-pen font-size-18"></i></a>
+                                            <a href="javascript:void(0);" class="px-1 text-danger" data-toggle="tooltip" data-placement="top" title="Delete"><i class="uil uil-trash-alt font-size-18" (click)="onDelete(item.urlId)"></i></a>
                                         </td>
                                     </tr>
                                     
                                 </tbody>
                             </table>
+                        </div>
+                        <div class="spinner-border text-secondary" style="margin: 0px 10px"  role="status"><span class="sr-only">Loading...</span>
                         </div>
                     </div>
                 </div>

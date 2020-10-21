@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {CustomerService} from '../../../../service/customer.service';
+import {Router} from '@angular/router';
+declare var $: any;
 
 @Component({
   selector: 'app-customer-add',
@@ -15,13 +17,29 @@ export class CustomerAddComponent implements OnInit {
 	  	telephone : '',
 	  	gender : 'Female',
 	}
-  constructor(private customerService: CustomerService) { }
+
+  errorMessage: any = {
+    otherName: '',
+    surname: '',
+    telephone: '',
+  }
+  constructor(private customerService: CustomerService, private router: Router) { }
 
   ngOnInit(): void {
-  }
+  } 
 
   submitData(){
-  	this.customerService.store(this.dataValue).subscribe(m => console.log(m));
+  	$('.spinner-border').css('display', 'inline-block');
+    this.customerService.store(this.dataValue).subscribe(
+      (data: any) => {
+          if(data.error){
+            $('.spinner-border').css('display', 'none');
+            this.errorMessage = data.error;
+          }else{
+            this.router.navigateByUrl('/v1/entries/customer');
+          }
+      }
+    );
   	
   }
 
