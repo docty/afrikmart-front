@@ -1,7 +1,7 @@
 <app-header></app-header>
 <app-sider></app-sider>
  <div class="main-content">
-	<div class="page-content">
+    <div class="page-content">
         <div class="container-fluid">
 
             <!-- start page title -->
@@ -12,8 +12,8 @@
 
                         <div class="page-title-right">
                             <ol class="breadcrumb m-0">
-                                <li class="breadcrumb-item"><a href="javascript: void(0);">Tables</a></li>
-                                <li class="breadcrumb-item active">Styles</li>
+                                <li class="breadcrumb-item"><a href="javascript: void(0);">Styles</a></li>
+                                <li class="breadcrumb-item active">All</li>
                             </ol>
                         </div>
 
@@ -26,36 +26,29 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-body">
-							<table id="datatable" class="table table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+                            <table id="datatable" class="table table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                                 <thead>
-	                                <tr>
-	                                    <th>Name</th>
-	                                    <th>Position</th>
-	                                    <th>Office</th>
-	                                    <th>Age</th>
-	                                    <th>Start date</th>
-	                                    <th>Salary</th>
-	                                </tr>
+                                    <tr>
+                                        <th>Material Name</th>
+                                        <th>Brand </th>
+                                        <th>Price</th>
+                                        <th>Category</th>
+                                        <th>Tag</th>
+                                        <th>Date</th>
+                                    </tr>
                                 </thead>
 
 
                                 <tbody>
-                                	<tr>
-	                                    <td>Michael Bruce</td>
-	                                    <td>Javascript Developer</td>
-	                                    <td>Singapore</td>
-	                                    <td>29</td>
-	                                    <td>2011/06/27</td>
-	                                    <td>$183,000</td>
-	                                </tr>
-	                                <tr>
-	                                    <td>Donna Snider</td>
-	                                    <td>Customer Support</td>
-	                                    <td>New York</td>
-	                                    <td>27</td>
-	                                    <td>2011/01/25</td>
-	                                    <td>$112,000</td>
-	                                </tr>
+                                    <tr *ngFor="let item of data">
+                                        <td>{{item.materialName}}</td>
+                                        <td>{{item.manufacturerBrand}}</td>
+                                        <td>{{item.price}}</td>
+                                        <td>{{item.category}}</td>
+                                        <td>{{item.tag}}</td>
+                                        <td>{{item.dateCreated}}</td>
+                                    </tr>
+                                    
                                 </tbody>
                             </table>
 

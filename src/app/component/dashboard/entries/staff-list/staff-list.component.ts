@@ -30,7 +30,7 @@ export class StaffListComponent implements OnInit {
         confirmButtonText: 'Yes, delete it!',
       }).then((isConfirm) => {
         if (isConfirm.value) {
-          this.staffService.delete(id).subscribe(() =>
+          this.staffService.delete(id).subscribe(
             () => {
               Swal.fire('Successful', 'Staff has been deleted', 'success');
               this.ngOnInit();

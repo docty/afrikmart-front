@@ -18,4 +18,12 @@ export class ProductService {
   storeMaterial(data){
     return this.httpClient.post(`${this.uri}/material`, data);
   }
+
+  indexStyle(){
+     return this.httpClient.get(`${this.uri}/style`);
+  }
+
+  storeStyle(data){
+    return this.httpClient.post(`${this.uri}/style`, data);
+  }
 }

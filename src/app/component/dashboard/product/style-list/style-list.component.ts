@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {ProductService} from '../../../../service/product.service';
+declare var $: any;
 
 @Component({
   selector: 'app-style-list',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StyleListComponent implements OnInit {
 
-  constructor() { }
+  data : any;
+  constructor(private productService: ProductService) { }
 
   ngOnInit(): void {
+  	this.productService.indexStyle().subscribe(m => 
+    {
+      this.data = m;
+      setTimeout(() => $('#datatable').DataTable(), 1000);
+    });
+  	
+  	
   }
 
 }

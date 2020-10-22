@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {MarketService} from '../../../../service/market.service';
+declare var $: any;
 
 @Component({
   selector: 'app-style-list',
@@ -12,7 +13,10 @@ export class StyleListComponent implements OnInit {
   constructor(private marketService: MarketService) { }
 
   ngOnInit(): void {
-  	this.marketService.indexStyle().subscribe(m => this.data = m);
+  	this.marketService.indexStyle().subscribe(m => {
+  		this.data = m;
+  		$('.spinner-border').css('display', 'none');
+  	});
   }
 
 }

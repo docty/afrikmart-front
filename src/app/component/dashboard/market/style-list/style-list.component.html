@@ -64,21 +64,21 @@
                             <div class="media">
                                 <div class="avatar-sm mr-4">
                                     <span class="avatar-title bg-soft-primary text-primary font-size-16 rounded-circle">
-                                        M
+                                        {{item.marketName.substring(0, 2)}}
                                     </span>
                                 </div>
                                 <div class="media-body align-self-center">
                                     <div class="border-bottom pb-1">
-                                        <h5 class="text-truncate font-size-16 mb-1"><a href="#" class="text-dark">{{item.marketName}}</a></h5>
+                                        <h5 class="text-truncate font-size-16 mb-1"><a href="javascript:void(0)" class="text-dark">{{item.marketName}}</a></h5>
                                         <p class="text-muted">
-                                            <i class="uil uil-briefcase mr-1"></i> Clifton Taylor
+                                            <i class="uil uil-briefcase mr-1"></i> {{item.customer.surname}} {{item.customer.otherName}}
                                         </p>
                                     </div>
                                     <div class="row">
                                         <div class="col-6">
                                             <div class="mt-3">
                                                 <p class="text-muted mb-2">Products</p>
-                                                <h5 class="font-size-16 mb-0">0</h5>
+                                                <h5 class="font-size-16 mb-0">{{item.countProduct}}</h5>
                                             </div>
                                         </div>
                                         <div class="col-6">
@@ -96,11 +96,13 @@
                 </div>
             </div>
             <!-- end row -->
-
+ 
             <div class="row">
                 <div class="col-xl-12">
                     <div class="text-center my-3">
-                        <a href="javascript:void(0);" class="text-primary"><i class="uil uil-spin font-size-20 align-middle mr-2"></i> Load more </a>
+                        <div class="spinner-border text-secondary" style="margin: 0px 10px;"  role="status">
+                            <span class="sr-only">Loading...</span>
+                        </div>
                     </div>
                 </div>
             </div>
