@@ -58,7 +58,7 @@
                                             {{item.telephone}}
                                         </td>
                                         <td>
-                                            <a [routerLink]="['/v1/entries/staff', item.urlId]" class="px-1 text-info" data-toggle="tooltip" data-placement="top" title="Profile"><i class="uil uil-book font-size-18"></i></a>
+                                            <a [routerLink]="['/v1/entries/staff', item.urlId]" class="px-1 text-success" data-toggle="tooltip" data-placement="top" title="Profile"><i class="uil uil-book font-size-18"></i></a>
                                             <a [routerLink]="['/v1/entries/staff', item.urlId, 'edit']" class="px-1 text-primary" data-toggle="tooltip" data-placement="top" title="Edit"><i class="uil uil-pen font-size-18"></i></a>
                                             <a href="javascript:void(0);" class="px-1 text-danger" data-toggle="tooltip" data-placement="top" title="Delete"><i class="uil uil-trash-alt font-size-18" (click)="onDelete(item.urlId)"></i></a>
                                         </td>

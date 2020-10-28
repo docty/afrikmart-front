@@ -17,7 +17,7 @@ export class CustomerListComponent implements OnInit {
   		this.data = m; 
   		$('.spinner-border').css('display', 'none');
   	});
-  }
+  } 
 
   onDelete(id): void{
 	  	Swal.fire({

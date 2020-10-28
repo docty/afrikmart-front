@@ -64,7 +64,7 @@
                             <div class="media">
                                 <div class="avatar-sm mr-4">
                                     <span class="avatar-title bg-soft-primary text-primary font-size-16 rounded-circle">
-                                        M
+                                        {{item.marketName.substring(0, 2)}}
                                     </span>
                                 </div>
                                 <div class="media-body align-self-center">
@@ -99,7 +99,9 @@
             <div class="row">
                 <div class="col-xl-12">
                     <div class="text-center my-3">
-                        <a href="javascript:void(0);" class="text-primary"><i class="uil uil-spin font-size-20 align-middle mr-2"></i> Load more </a>
+                        <div class="spinner-border text-secondary" style="margin: 0px 10px;"  role="status">
+                            <span class="sr-only">Loading...</span>
+                        </div>
                     </div>
                 </div>
             </div>

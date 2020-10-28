@@ -12,7 +12,7 @@
 
                         <div class="page-title-right">
                             <ol class="breadcrumb m-0">
-                                <li class="breadcrumb-item"><a href="javascript: void(0);">Tables</a></li>
+                                <li class="breadcrumb-item"><a href="javascript: void(0);">Orders</a></li>
                                 <li class="breadcrumb-item active">Pending</li>
                             </ol>
                         </div>
@@ -29,41 +29,51 @@
 							<table id="datatable" class="table table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                                 <thead>
 	                                <tr>
-	                                    <th>Name</th>
-	                                    <th>Position</th>
-	                                    <th>Office</th>
-	                                    <th>Age</th>
-	                                    <th>Start date</th>
-	                                    <th>Salary</th>
+                                        <th>SN</th>
+	                                    <th>Product ID</th>
+	                                    <th>Order Reason</th>
+	                                    <th>Quantity</th>
+                                        <th>Amount</th>
+	                                    <th>Consumer Name</th>
+	                                    <th>Telephone</th>
+                                        <th>Date</th>
+	                                    <th>Action</th>
 	                                </tr>
                                 </thead>
 
 
                                 <tbody>
-                                	<tr>
-	                                    <td>Michael Bruce</td>
-	                                    <td>Javascript Developer</td>
-	                                    <td>Singapore</td>
-	                                    <td>29</td>
-	                                    <td>2011/06/27</td>
-	                                    <td>$183,000</td>
+                                	<tr *ngFor="let item of data; let i = index">
+                                        <td>{{i+1}}</td>
+	                                    <td>{{item.productId}}</td>
+	                                    <td>{{item.orderReason}}</td>
+	                                    <td>{{item.quantity}}</td>
+	                                    <td>{{item.amount}}</td>
+	                                    <td>Asiedu Henry Kwasi</td>
+	                                    <td>0247049416</td>
+                                        <td>{{item.dateCreated}}</td>
+                                        <td>
+                                            <button class="btn btn-success">Proceed</button>
+                                        </td>
 	                                </tr>
-	                                <tr>
-	                                    <td>Donna Snider</td>
-	                                    <td>Customer Support</td>
-	                                    <td>New York</td>
-	                                    <td>27</td>
-	                                    <td>2011/01/25</td>
-	                                    <td>$112,000</td>
-	                                </tr>
+	                                
                                 </tbody>
                             </table>
 
                         </div>
                     </div>
+
                 </div> 
             </div> 
-
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="text-center my-3">
+                        <div class="spinner-border text-secondary" style="margin: 0px 10px;"  role="status">
+                            <span class="sr-only">Loading...</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
                 

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {MarketService} from '../../../../service/market.service';
-
+declare var $:any;
 @Component({
   selector: 'app-material-list',
   templateUrl: './material-list.component.html',
@@ -12,7 +12,10 @@ export class MaterialListComponent implements OnInit {
   constructor(private marketService: MarketService) { }
 
   ngOnInit(): void {
-  	this.marketService.indexMaterial().subscribe(m => this.data = m);
+  	this.marketService.indexMaterial().subscribe(m => {
+  		this.data = m;
+  		$('.spinner-border').css('display', 'none');
+  	});
   }
 
 }
