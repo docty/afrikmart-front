@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {OrderService} from '../../../../service/order.service';
+import Swal from '../../../../../assets/libs/sweetalert2/sweetalert2.min';
+declare var $: any;
 
 @Component({
   selector: 'app-complete',
@@ -7,9 +10,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CompleteComponent implements OnInit {
 
-  constructor() { }
+  data: any;
+   
+  constructor(private orderService: OrderService) { }
 
   ngOnInit(): void {
+  	this.orderService.indexComplete().subscribe(m => {
+  		this.data = m; 
+  		$('.spinner-border').css('display', 'none');
+  	});
   }
 
 }

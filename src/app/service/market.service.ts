@@ -26,4 +26,12 @@ export class MarketService {
   storeStyle(data){
     return this.httpClient.post(`${this.uri}/market-style`, data);
   }
+
+  Storewallet(data){
+    return this.httpClient.post(`${this.uri}/customer-wallet`, data);
+  }
+
+  getWallet(id){
+    return this.httpClient.get(`${this.uri}/customer-wallet/${id}`);
+  }
 }

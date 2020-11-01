@@ -1,6 +1,6 @@
 <app-header></app-header>
 <app-sider></app-sider>
- <div class="main-content">
+<div class="main-content">
 	<div class="page-content">
         <div class="container-fluid">
 
@@ -53,9 +53,9 @@
 	                                    <td>0247049416</td>
                                         <td>{{item.dateCreated}}</td>
                                         <td>
-                                            <button class="btn btn-success">Proceed</button>
+                                            <button class="btn btn-success" data-toggle="modal" data-target=".bs-example-modal-center" (click)="onSetId(item.urlId)">Proceed</button>
                                         </td>
-	                                </tr>
+	                                </tr> 
 	                                
                                 </tbody>
                             </table>
@@ -78,4 +78,31 @@
     </div>
                 
 </div>
-            
+      
+<!--  Modal Data  -->
+<div class="modal fade bs-example-modal-center" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Market Details</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group row">
+                        <label for="example-text-input" class="col-md-3 col-form-label">Market ID</label>
+                        <div class="col-md-9">
+                            <input class="form-control" type="text" placeholder="Enter Market ID" id="example-text-input"   name="marketId" [(ngModel)]="value.marketId">
+                        </div>
+                    </div>
+                </form>
+            </div>
+             <div class="modal-footer">
+                <button type="button" class="btn btn-light waves-effect" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary waves-effect waves-light" data-dismiss="modal" (click)="onProceed()">Proceed</button>
+            </div>
+        </div> 
+    </div> 
+</div> 

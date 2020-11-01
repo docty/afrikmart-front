@@ -1,19 +1,19 @@
 <app-header></app-header>
 <app-sider></app-sider>
-<div class="main-content">
-    <div class="page-content">
+ <div class="main-content">
+	<div class="page-content">
         <div class="container-fluid">
 
             <!-- start page title -->
             <div class="row">
                 <div class="col-12">
                     <div class="page-title-box d-flex align-items-center justify-content-between">
-                        <h4 class="mb-0">Complete Order</h4>
+                        <h4 class="mb-0">Processing Order</h4>
 
                         <div class="page-title-right">
                             <ol class="breadcrumb m-0">
                                 <li class="breadcrumb-item"><a href="javascript: void(0);">Orders</a></li>
-                                <li class="breadcrumb-item active">Complete</li>
+                                <li class="breadcrumb-item active">Processing</li>
                             </ol>
                         </div>
 
@@ -26,35 +26,37 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-body">
-                            <table id="datatable" class="table table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+							<table id="datatable" class="table table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                                 <thead>
-                                    <tr>
+	                                <tr>
                                         <th>SN</th>
-                                        <th>Product ID</th>
-                                        <th>Order Reason</th>
-                                        <th>Quantity</th>
+	                                    <th>Product ID</th>
+	                                    <th>Order Reason</th>
+	                                    <th>Quantity</th>
                                         <th>Amount</th>
-                                        <th>Consumer Name</th>
-                                        <th>Telephone</th>
+	                                    <th>Consumer Name</th>
+	                                    <th>Telephone</th>
                                         <th>Date</th>
-                                         
-                                    </tr>
+	                                    <th>Action</th>
+	                                </tr>
                                 </thead>
 
 
                                 <tbody>
-                                    <tr *ngFor="let item of data; let i = index">
+                                	<tr *ngFor="let item of data; let i = index">
                                         <td>{{i+1}}</td>
-                                        <td>{{item.productId}}</td>
-                                        <td>{{item.orderReason}}</td>
-                                        <td>{{item.quantity}}</td>
-                                        <td>{{item.amount}}</td>
-                                        <td>Asiedu Henry Kwasi</td>
-                                        <td>0247049416</td>
+	                                    <td>{{item.productId}}</td>
+	                                    <td>{{item.orderReason}}</td>
+	                                    <td>{{item.quantity}}</td>
+	                                    <td>{{item.amount}}</td>
+	                                    <td>Asiedu Henry Kwasi</td>
+	                                    <td>0247049416</td>
                                         <td>{{item.dateCreated}}</td>
-                                         
-                                    </tr> 
-                                    
+                                        <td>
+                                            <button class="btn btn-success" (click)="onComplete(item.urlId)">Complete</button>
+                                        </td>
+	                                </tr> 
+	                                
                                 </tbody>
                             </table>
 
@@ -74,8 +76,6 @@
             </div>
         </div>
     </div>
+                
 </div>
-
-
-                                            
             

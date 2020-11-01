@@ -15,5 +15,20 @@ export class OrderService {
      return this.httpClient.get(`${this.uri}/order`);
   }
 
-   
+  indexProcessing(){
+     return this.httpClient.get(`${this.uri}/order-processing`);
+  }
+
+  indexComplete(){
+  	return this.httpClient.get(`${this.uri}/order-complete`);
+  	
+  }
+
+   movePending(id){
+   	  return this.httpClient.post(`${this.uri}/move-pending`, id);	
+   }
+
+   moveProcessing(id){
+   		  return this.httpClient.post(`${this.uri}/move-processing`, id);	
+   }
 }

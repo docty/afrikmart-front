@@ -55,7 +55,7 @@
                                 </a>
                               
                                 <div class="dropdown-menu dropdown-menu-right">
-                                    <a class="dropdown-item" href="#">View</a>
+                                    <a class="dropdown-item" [routerLink]="['/v1/market/material', 'show']">View</a>
                                     <a class="dropdown-item" href="#">Edit</a>
                                     <a class="dropdown-item" href="#">Delete</a>
                                 </div>
@@ -69,9 +69,12 @@
                                 </div>
                                 <div class="media-body align-self-center">
                                     <div class="border-bottom pb-1">
-                                        <h5 class="text-truncate font-size-16 mb-1"><a href="#" class="text-dark">{{item.marketName}}</a></h5>
+                                        <h5 class="text-truncate font-size-16 mb-1"><a href="javascript:void(0)" class="text-dark">{{item.marketName}}</a></h5>
                                         <p class="text-muted">
-                                            <i class="uil uil-briefcase mr-1"></i>{{item.customer.surname}} {{item.customer.otherName}}
+                                            Market ID: ({{item.marketId}})
+                                        </p>
+                                        <p class="text-muted">
+                                            {{item.customer.surname}} {{item.customer.otherName}}
                                         </p>
                                     </div>
                                     <div class="row">

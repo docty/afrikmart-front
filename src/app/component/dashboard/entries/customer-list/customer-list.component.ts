@@ -29,7 +29,7 @@ export class CustomerListComponent implements OnInit {
 	      confirmButtonText: 'Yes, delete it!',
 	    }).then((isConfirm) => {
 	      if (isConfirm.value) {
-	        this.customerService.delete(id).subscribe(() =>
+	        this.customerService.delete(id).subscribe(
 	          () => {
 	            Swal.fire('Successful', 'Customer has been deleted', 'success');
 	            this.ngOnInit();
