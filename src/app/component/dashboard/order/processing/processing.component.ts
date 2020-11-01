@@ -11,9 +11,7 @@ declare var $: any;
 export class ProcessingComponent implements OnInit {
 
   data: any;
-  value = {
-    urlId : ''
-  }
+   
   constructor(private orderService: OrderService) { }
 
   ngOnInit(): void {
@@ -24,7 +22,7 @@ export class ProcessingComponent implements OnInit {
   }
 
   onComplete(id): void{
-      this.value.urlId = id;
+       
          
       Swal.fire({
         title: 'Are you sure to  complete this order ?',
@@ -35,7 +33,7 @@ export class ProcessingComponent implements OnInit {
         confirmButtonText: 'Yes',
       }).then((isConfirm) => {
         if (isConfirm.value) {
-          this.orderService.moveProcessing(this.value).subscribe(
+          this.orderService.moveProcessing(id).subscribe(
             (da) => {
               console.log(da);
               Swal.fire('Successful', 'Order is now completed', 'success');

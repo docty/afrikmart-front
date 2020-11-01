@@ -11,7 +11,7 @@ import { StyleAddComponent } from './style-add/style-add.component';
 const routes: Routes = [
 	{path: 'material', component: MaterialListComponent},
 	{path: 'material/add', component: MaterialAddComponent},
-	{path: 'material/:view', component: MaterialViewComponent },
+	{path: 'material/:url', component: MaterialViewComponent },
 	{path: 'style', component: StyleListComponent},
 	{path: 'style/add', component: StyleAddComponent}
 ];

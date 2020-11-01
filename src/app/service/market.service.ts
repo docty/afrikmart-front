@@ -19,6 +19,9 @@ export class MarketService {
     return this.httpClient.post(`${this.uri}/market-material`, data);
   }
 
+  showMaterial(id){
+      return this.httpClient.get(`${this.uri}/market-material/${id}`);
+  }
   indexStyle(){
      return this.httpClient.get(`${this.uri}/market-style`);
   }
