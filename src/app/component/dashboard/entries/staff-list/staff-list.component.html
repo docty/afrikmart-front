@@ -33,6 +33,7 @@
                             <table class="table table-centered datatable dt-responsive nowrap table-card-list" style="border-collapse: collapse; border-spacing: 0 12px; width: 100%;">
                                 <thead>
                                     <tr class="bg-transparent">
+                                        <th>SN</th>
                                         <th style="width: 120px;">Staff ID</th>
                                         <th>Full Name</th>
                                         <th>Email</th>
@@ -43,7 +44,8 @@
                                 </thead>
                                 <tbody>
 
-                                    <tr *ngFor="let item of data">
+                                    <tr *ngFor="let item of data; let i = index">
+                                        <td>{{i+1}}</td>
                                         <td><a href="javascript: void(0);" class="text-dark font-weight-bold">{{item.staffId}}</a> </td>
                                         <td>
                                             <!-- <img src="assets/images/users/avatar-2.jpg" alt="" class="avatar-xs rounded-circle mr-2"> -->

@@ -1,0 +1,101 @@
+<app-header></app-header>
+<app-sider></app-sider>
+ <div class="main-content">
+	<div class="page-content">
+        <div class="container-fluid">
+
+		    <!-- start page title -->
+		    <div class="row">
+		        <div class="col-12">
+		            <div class="page-title-box d-flex align-items-center justify-content-between">
+		                <h4 class="mb-0">Wallet </h4>
+
+		                <div class="page-title-right">
+		                    <ol class="breadcrumb m-0">
+		                        <li class="breadcrumb-item"><a href="javascript: void(0);">Wallet</a></li>
+		                        <li class="breadcrumb-item active">All</li>
+		                    </ol>
+		                </div>
+
+		            </div>
+		        </div>
+		    </div>
+		    <!-- end page title -->
+		    
+		    <div class="row">
+		    	<button class="btn btn-success" data-toggle="modal" data-target=".bs-example-modal-center" style="margin-bottom: 15px">Withdrawal</button>
+		    </div>
+		    <div class="row">
+		        <div class="col-12">
+		            <div class="card">
+		                <div class="card-body">
+							<table id="datatable" class="table table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+		                        <thead>
+		                            <tr>
+		                            	<th>SN</th>
+		                                <th>Market Name </th>
+		                                <th>Deposit</th>
+		                                <th>Withdrawal</th>
+		                                <th>Balance</th>
+		                                <th>Date</th>
+		                            </tr>
+		                        </thead>
+
+
+		                        <tbody>
+		                        	<tr *ngFor="let item of data; let i = index">
+		                        		<td>{{data.length - i}}</td>
+		                                <td>{{item.market.marketName}} ({{item.marketId}})</td>
+		                                <td>{{item.deposit}}</td>
+		                                <td>{{item.withdrawal}}</td>
+		                                <td>{{item.balance}}</td>
+		                                <td>{{item.dateCreated}}</td>
+		                            </tr>
+		                            
+		                        </tbody>
+		                    </table>
+
+		                </div>
+		            </div>
+		        </div> 
+		    </div> 
+
+        </div>
+    </div>
+                
+</div>
+
+
+<!--  Modal Data  -->
+<div class="modal fade bs-example-modal-center" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Withdrawal Details</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group row">
+                        <label for="example-text-input" class="col-md-4 col-form-label">Market ID</label>
+                        <div class="col-md-8">
+                            <input class="form-control" type="text" placeholder="Enter Market ID" id="marketId"   name="marketId" [(ngModel)]="dataValue.marketId">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="example-text-input" class="col-md-4 col-form-label">Withdrawal Amount</label>
+                        <div class="col-md-8">
+                            <input class="form-control" type="text" placeholder="Enter Withdrawal Amount" id="withdrawal"   name="withdrawal" [(ngModel)]="dataValue.withdrawal">
+                        </div>
+                    </div>
+                </form>
+            </div>
+             <div class="modal-footer">
+                <button type="button" class="btn btn-light waves-effect" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary waves-effect waves-light" data-dismiss="modal"  (click)="onWithdrawal()">Proceed</button>
+            </div>
+        </div> 
+    </div> 
+</div> 

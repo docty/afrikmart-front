@@ -5,14 +5,15 @@ import { DashboardRoutingModule } from './dashboard-routing.module';
 import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
 import { SiderComponent } from './sider/sider.component';
+import { WalletComponent } from './extras/wallet/wallet.component';
 
 
 @NgModule({
-  declarations: [HomeComponent, HeaderComponent, SiderComponent],
+  declarations: [HomeComponent, HeaderComponent, SiderComponent, WalletComponent],
   imports: [
     CommonModule,
-    DashboardRoutingModule
+    DashboardRoutingModule, FormsModule
   ],
   exports: [HeaderComponent, SiderComponent, FormsModule]
 })
-export class DashboardModule { }
+export class DashboardModule { } 

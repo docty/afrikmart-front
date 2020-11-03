@@ -33,6 +33,7 @@
                             <table class="table table-centered datatable dt-responsive nowrap table-card-list" style="border-collapse: collapse; border-spacing: 0 12px; width: 100%;">
                                 <thead>
                                     <tr class="bg-transparent">
+                                        <th>SN</th>
                                         <th style="width: 120px;">Customer ID</th>
                                         <th>Full Name</th>
                                         <th>Email</th>
@@ -41,7 +42,8 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr *ngFor="let item of data">
+                                    <tr *ngFor="let item of data; let i = index">
+                                        <td>{{i+1}}</td>
                                         <td><a href="javascript: void(0);" class="text-dark font-weight-bold">{{item.customerId}}</a> </td>
                                         <td>
                                             <!-- <img src="assets/images/users/avatar-2.jpg" alt="" class="avatar-xs rounded-circle mr-2"> -->
@@ -54,7 +56,7 @@
                                             {{item.telephone}}
                                         </td>
                                         <td>
-                                            <a [routerLink]="['/v1/entries/customer', item.urlId]" class="px-1 text-info" data-toggle="tooltip" data-placement="top" title="Profile"><i class="uil uil-book font-size-18"></i></a>
+                                            <a [routerLink]="['/v1/entries/customer', item.urlId]" class="px-1 text-success" data-toggle="tooltip" data-placement="top" title="Profile"><i class="uil uil-book font-size-18"></i></a>
                                             <a [routerLink]="['/v1/entries/customer', item.urlId, 'edit']" class="px-1 text-primary" data-toggle="tooltip" data-placement="top" title="Edit"><i class="uil uil-pen font-size-18"></i></a>
                                             <a href="javascript:void(0);" class="px-1 text-danger" data-toggle="tooltip" data-placement="top" title="Delete"><i class="uil uil-trash-alt font-size-18" (click)="onDelete(item.urlId)"></i></a>
                                         </td>
