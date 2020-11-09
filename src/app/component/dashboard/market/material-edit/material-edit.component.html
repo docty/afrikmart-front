@@ -9,12 +9,12 @@
             <div class="row">
                 <div class="col-12">
                     <div class="page-title-box d-flex align-items-center justify-content-between">
-                        <h4 class="mb-0">Add Material Market</h4>
+                        <h4 class="mb-0">Edit Material Market</h4>
 
                         <div class="page-title-right">
                             <ol class="breadcrumb m-0">
                                 <li class="breadcrumb-item"><a [routerLink]="['/v1/market/material']">Material Market</a></li>
-                                <li class="breadcrumb-item active">Add</li>
+                                <li class="breadcrumb-item active">Edit</li>
                             </ol>
                         </div>
 
@@ -62,7 +62,7 @@
                             <div class="form-group row">
                                 <label class="col-md-2 col-form-label"></label>
                                 <div class="col-md-10">
-                                    <button class="btn btn-primary" (click)="submitData()">SAVE</button>
+                                    <button class="btn btn-primary" (click)="updateData()">UPDATE</button>
                                     <div class="spinner-border text-secondary" style="margin: 0px 10px; display: none"  role="status">
                                         <span class="sr-only">Loading...</span>
                                     </div>

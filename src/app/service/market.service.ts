@@ -22,6 +22,12 @@ export class MarketService {
   showMaterial(id){
       return this.httpClient.get(`${this.uri}/market-material/${id}`);
   }
+
+  
+  updateMaterial(id, data){ 
+    return this.httpClient.put(`${this.uri}/market-material/${id}`, data);
+  }
+
   indexStyle(){
      return this.httpClient.get(`${this.uri}/market-style`);
   }
@@ -30,6 +36,10 @@ export class MarketService {
     return this.httpClient.post(`${this.uri}/market-style`, data);
   }
 
+  deleteMaterial(id){
+    return this.httpClient.delete(`${this.uri}/market-material/${id}`);
+  }
+  
   Storewallet(data){
     return this.httpClient.post(`${this.uri}/customer-wallet`, data);
   }

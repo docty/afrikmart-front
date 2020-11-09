@@ -7,10 +7,12 @@ import { MaterialListComponent } from './material-list/material-list.component';
 import { MaterialAddComponent } from './material-add/material-add.component';
 import { StyleListComponent } from './style-list/style-list.component';
 import { StyleAddComponent } from './style-add/style-add.component';
+import { MaterialViewComponent } from './material-view/material-view.component';
+import { MaterialEditComponent } from './material-edit/material-edit.component';
 
 
 @NgModule({
-  declarations: [MaterialListComponent, MaterialAddComponent, StyleListComponent, StyleAddComponent],
+  declarations: [MaterialListComponent, MaterialAddComponent, StyleListComponent, StyleAddComponent, MaterialViewComponent, MaterialEditComponent],
   imports: [
     CommonModule,
     ProductRoutingModule, DashboardModule, FormsModule

@@ -55,6 +55,16 @@
                         <li><a [routerLink]="['/v1/entries/customer']">List</a></li>
                     </ul>
                 </li>
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                        <i class="uil-store"></i>
+                        <span>Consumer</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="false">
+                        <li><a [routerLink]="['/v1/entries/consumer/add']">Add</a></li>
+                        <li><a [routerLink]="['/v1/entries/consumer']">List</a></li>
+                    </ul>
+                </li>
                 <li class="menu-title">Market</li>
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
@@ -106,6 +116,7 @@
                     <ul class="sub-menu" aria-expanded="false">
                         <li><a [routerLink]="['/v1/order/pending']">Pending</a></li>
                         <li><a [routerLink]="['/v1/order/processing']">Processing</a></li>
+                        <li><a [routerLink]="['/v1/order/delivering']">Delivering</a></li>
                         <li><a [routerLink]="['/v1/order/complete']">Complete</a></li>
                     </ul>
                 </li>

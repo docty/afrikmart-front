@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import {ProductMaterial} from '../../../../model/productMaterial.model';
 import {ProductService} from '../../../../service/product.service';
-import {Router} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 declare var $: any;
 
 @Component({
-  selector: 'app-material-add',
-  templateUrl: './material-add.component.html',
-  styleUrls: ['./material-add.component.css']
+  selector: 'app-material-edit',
+  templateUrl: './material-edit.component.html',
+  styleUrls: ['./material-edit.component.css']
 })
-export class MaterialAddComponent implements OnInit {
+export class MaterialEditComponent implements OnInit {
 
   dataValue: ProductMaterial = {
     materialName : '',
@@ -33,20 +33,26 @@ export class MaterialAddComponent implements OnInit {
     customerId: ''
   }
 
-  fileData: File[] = [];
-
-  constructor(private productService: ProductService, private router: Router) { }
+  id: string;
+  private sub: any;
+  
+  constructor(private productService: ProductService, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+  	this.sub = this.route.params.subscribe(params => {
+      this.id = params.url;
+    });
+    this.productService.showMaterial(this.id).subscribe(
+      (data: ProductMaterial) => {this.dataValue = data;}
+    );
   	$(".select2").select2();
-    $(".dropzone").dropzone();
   }
 
-  onSaveMaterial(){
+  onUpdateMaterial(){
     $('.spinner-border').css('display', 'inline-block');
     this.dataValue.category  = $('#category').val();
     this.dataValue.tag  = $('#tag').val();
-    this.productService.storeMaterial(this.dataValue).subscribe(
+    this.productService.updateMaterial(this.id, this.dataValue).subscribe(
       (data: any) => {
           if(data.error){
             $('.spinner-border').css('display', 'none');
@@ -56,26 +62,6 @@ export class MaterialAddComponent implements OnInit {
           }
       }
     );
-    // this.onSubmitProfile();
-  }
-
-  fileProgress(event){
-    console.log(event);
-    this.fileData.push(...event.addedFiles);// = fileInput.target.files[0];
-    const formData = new FormData();
-    for (var i = 0; i < this.fileData.length; i++) {
-       formData.append("files[]", this.fileData[i]);
-     }
-     console.log(formData);
-  }
-
-  onSubmitProfile(){
-     console.log(this.fileData);
-    // formData.append('clientId', this.data.clientId);
-    // this.clientService.uploadProfile(formData).subscribe(
-    //   arg => console.log(arg)
-    //   );
-
   }
 
 }

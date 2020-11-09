@@ -1,6 +1,6 @@
 <app-header></app-header>
 <app-sider></app-sider>
-<div class="main-content">
+ <div class="main-content">
 	<div class="page-content">
         <div class="container-fluid">
 
@@ -8,12 +8,12 @@
             <div class="row">
                 <div class="col-12">
                     <div class="page-title-box d-flex align-items-center justify-content-between">
-                        <h4 class="mb-0">Pending Order</h4>
+                        <h4 class="mb-0">Delivering Order</h4>
 
                         <div class="page-title-right">
                             <ol class="breadcrumb m-0">
                                 <li class="breadcrumb-item"><a href="javascript: void(0);">Orders</a></li>
-                                <li class="breadcrumb-item active">Pending</li>
+                                <li class="breadcrumb-item active">Delivering</li>
                             </ol>
                         </div>
 
@@ -31,10 +31,10 @@
 	                                <tr>
                                         <th>SN</th>
 	                                    <th>Product ID</th>
-	                                    <th>Order Reason</th>
-	                                    <th>Quantity</th>
-                                        <th>Amount</th>
-	                                    <th>Consumer Name</th>
+	                                    <th>City</th>
+	                                    <th>Landmark</th>
+                                        <th>Pickup Point</th>
+	                                    <th>Message</th>
 	                                    <th>Telephone</th>
                                         <th>Date</th>
 	                                    <th>Action</th>
@@ -46,14 +46,14 @@
                                 	<tr *ngFor="let item of data; let i = index">
                                         <td>{{i+1}}</td>
 	                                    <td>{{item.productId}}</td>
-	                                    <td>{{item.orderReason}}</td>
-	                                    <td>{{item.quantity}}</td>
-	                                    <td>{{item.amount*item.quantity}}</td>
-	                                    <td>{{item.consumer.firstName}} {{item.consumer.lastName}}</td>
+	                                    <td>{{item.city}}</td>
+	                                    <td>{{item.landmark}}</td>
+	                                    <td>{{item.pickup}}</td>
+	                                    <td>{{item.orderNote}}</td>
 	                                    <td>{{item.consumer.phoneNumber}}</td>
                                         <td>{{item.dateCreated}}</td>
                                         <td>
-                                            <button class="btn btn-success" data-toggle="modal" data-target=".bs-example-modal-center" (click)="onSetId(item.urlId)">Proceed</button>
+                                            <button class="btn btn-success" (click)="onComplete(item)">Complete</button>
                                         </td>
 	                                </tr> 
 	                                
@@ -78,31 +78,4 @@
     </div>
                 
 </div>
-      
-<!--  Modal Data  -->
-<div class="modal fade bs-example-modal-center" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Market Details</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <form>
-                    <div class="form-group row">
-                        <label for="example-text-input" class="col-md-3 col-form-label">Market ID</label>
-                        <div class="col-md-9">
-                            <input class="form-control" type="text" placeholder="Enter Market ID" id="example-text-input"   name="marketId" [(ngModel)]="value.marketId">
-                        </div>
-                    </div>
-                </form>
-            </div>
-             <div class="modal-footer">
-                <button type="button" class="btn btn-light waves-effect" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary waves-effect waves-light" data-dismiss="modal" (click)="onProceed()">Proceed</button>
-            </div>
-        </div> 
-    </div> 
-</div> 
+            

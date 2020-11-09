@@ -8,11 +8,11 @@
             <div class="row">
                 <div class="col-12">
                     <div class="page-title-box d-flex align-items-center justify-content-between">
-                        <h4 class="mb-0">Customers</h4>
+                        <h4 class="mb-0">Consumers</h4>
 
                         <div class="page-title-right">
                             <ol class="breadcrumb m-0">
-                                <li class="breadcrumb-item"><a href="javascript: void(0);">Customers</a></li>
+                                <li class="breadcrumb-item"><a href="javascript: void(0);">Consumers</a></li>
                                 <li class="breadcrumb-item active">All</li>
                             </ol>
                         </div>
@@ -26,7 +26,7 @@
                 <div class="col-lg-12">
                     <div>
                         <div>
-                            <a type="button" class="btn btn-success waves-effect waves-light mb-3" [routerLink]="['/v1/entries/customer/add']"><i class="uil uil-plus mr-1" ></i> Add customer</a> 
+                            <a type="button" class="btn btn-success waves-effect waves-light mb-3" [routerLink]="['/v1/entries/consumer/add']"><i class="uil uil-plus mr-1" ></i> Add Consumer</a> 
                         </div>
 
                         <div class="table-responsive mb-4">
@@ -34,7 +34,7 @@
                                 <thead>
                                     <tr class="bg-transparent">
                                         <th>SN</th>
-                                        <th style="width: 120px;">Customer ID</th>
+                                        <th style="width: 120px;">Consumer ID</th>
                                         <th>Full Name</th>
                                         <th>Email</th>
                                         <th>Telephone</th>
@@ -44,19 +44,19 @@
                                 <tbody>
                                     <tr *ngFor="let item of data; let i = index">
                                         <td>{{i+1}}</td>
-                                        <td><span class="text-dark font-weight-bold">{{item.customerId}}</span> </td>
+                                        <td><a href="javascript: void(0);" class="text-dark font-weight-bold">{{item.consumerId}}</a> </td>
                                         <td>
                                             <!-- <img src="assets/images/users/avatar-2.jpg" alt="" class="avatar-xs rounded-circle mr-2"> -->
-                                            <span>{{item.surname | titlecase}} {{item.otherName | titlecase}}</span>
+                                            <span>{{item.lastName}} {{item.firstName}}</span>
                                         </td>
                                         <td>{{item.email}}</td>
                                         
                                         
                                         <td>
-                                            {{item.telephone}}
+                                            {{item.phoneNumber}}
                                         </td>
                                         <td>
-                                            <a [routerLink]="['/v1/entries/customer', item.urlId]" class="px-1 text-success" data-toggle="tooltip" data-placement="top" title="Profile"><i class="uil uil-subject font-size-18"></i></a>
+                                            <a [routerLink]="['/v1/entries/customer', item.urlId]" class="px-1 text-success" data-toggle="tooltip" data-placement="top" title="Profile"><i class="uil uil-book font-size-18"></i></a>
                                             <a [routerLink]="['/v1/entries/customer', item.urlId, 'edit']" class="px-1 text-primary" data-toggle="tooltip" data-placement="top" title="Edit"><i class="uil uil-pen font-size-18"></i></a>
                                             <a href="javascript:void(0);" class="px-1 text-danger" data-toggle="tooltip" data-placement="top" title="Delete"><i class="uil uil-trash-alt font-size-18" (click)="onDelete(item.urlId)"></i></a>
                                         </td>

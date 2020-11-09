@@ -56,8 +56,8 @@
                               
                                 <div class="dropdown-menu dropdown-menu-right">
                                     <a class="dropdown-item" [routerLink]="['/v1/market/material', item.urlId]">View</a>
-                                    <a class="dropdown-item" href="#">Edit</a>
-                                    <a class="dropdown-item" href="#">Delete</a>
+                                    <a class="dropdown-item" [routerLink]="['/v1/market/material', item.urlId, 'edit']">Edit</a>
+                                    <a class="dropdown-item" href="javascript:void(0)" (click)="onDelete(item.urlId)">Delete</a>
                                 </div>
                             </div>
                             <div class="clearfix"></div>
@@ -74,7 +74,10 @@
                                             Market ID: ({{item.marketId}})
                                         </p>
                                         <p class="text-muted">
-                                            {{item.customer.surname}} {{item.customer.otherName}}
+                                            {{item.customer.surname | titlecase}} {{item.customer.otherName | titlecase}} 
+                                        </p>
+                                        <p class="text-muted">
+                                            Customer ID: ({{item.customer.customerId}})
                                         </p>
                                     </div>
                                     <div class="row">

@@ -4,28 +4,28 @@ import Swal from '../../../../../assets/libs/sweetalert2/sweetalert2.min';
 declare var $: any;
 
 @Component({
-  selector: 'app-processing',
-  templateUrl: './processing.component.html',
-  styleUrls: ['./processing.component.css']
+  selector: 'app-delivering',
+  templateUrl: './delivering.component.html',
+  styleUrls: ['./delivering.component.css']
 })
-export class ProcessingComponent implements OnInit {
+export class DeliveringComponent implements OnInit {
 
   data: any;
    
   constructor(private orderService: OrderService) { }
 
   ngOnInit(): void {
-  	this.orderService.indexProcessing().subscribe(m => {
+  	this.orderService.indexDelivering().subscribe(m => {
   		this.data = m; 
   		$('.spinner-border').css('display', 'none');
   	});
   }
 
-  onDelivery(id): void{
+  onComplete(id): void{
        
          
       Swal.fire({
-        title: 'Are you sure to  deliver this order ?',
+        title: 'Are you sure to  complete this order ?',
         type: 'warning',
         showCancelButton: true,
         confirmButtonColor: '#34c38f',
@@ -33,7 +33,7 @@ export class ProcessingComponent implements OnInit {
         confirmButtonText: 'Yes',
       }).then((isConfirm) => {
         if (isConfirm.value) {
-          this.orderService.moveProcessing(id).subscribe(
+          this.orderService.moveDelivering(id).subscribe(
             () => {
               Swal.fire('Successful', 'Order is now completed', 'success');
               this.ngOnInit();

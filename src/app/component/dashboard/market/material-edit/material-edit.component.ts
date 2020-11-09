@@ -1,18 +1,19 @@
 import { Component, OnInit } from '@angular/core';
-import {Router} from '@angular/router';
-
+import {ActivatedRoute, Router} from '@angular/router';
 import {MarketService} from '../../../../service/market.service';
-
 declare var $: any;
 
 @Component({
-  selector: 'app-material-add',
-  templateUrl: './material-add.component.html',
-  styleUrls: ['./material-add.component.css']
+  selector: 'app-material-edit',
+  templateUrl: './material-edit.component.html',
+  styleUrls: ['./material-edit.component.css']
 })
-export class MaterialAddComponent implements OnInit {
+export class MaterialEditComponent implements OnInit {
 
-  dataValue = {
+  id: string;
+  private sub: any;
+
+  dataValue:any = {
   	marketName : '',
   	location : '',
   	noEmployees : '',
@@ -25,14 +26,21 @@ export class MaterialAddComponent implements OnInit {
     noEmployees : '',
     customerId : ''
   } 
-  constructor(private marketService: MarketService, private router: Router) { }
+  constructor(private marketService: MarketService, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+  	this.sub = this.route.params.subscribe(params => {
+      this.id = params.url;
+    });
+    this.marketService.showMaterial(this.id).subscribe(
+      data => {this.dataValue = data;}
+    );
   }
+  
 
-  submitData(){
+  updateData(){
     $('.spinner-border').css('display', 'inline-block');
-    this.marketService.storeMaterial(this.dataValue).subscribe(
+    this.marketService.updateMaterial(this.id,this.dataValue).subscribe(
       (data: any) => {
           if(data.error){
             $('.spinner-border').css('display', 'none');
@@ -43,8 +51,5 @@ export class MaterialAddComponent implements OnInit {
       }
     );
   }
-
-
-  
 
 }

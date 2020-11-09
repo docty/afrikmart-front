@@ -5,10 +5,11 @@ import { OrderRoutingModule } from './order-routing.module';
 import { PendingComponent } from './pending/pending.component';
 import { CompleteComponent } from './complete/complete.component';
 import { ProcessingComponent } from './processing/processing.component';
+import { DeliveringComponent } from './delivering/delivering.component';
 
 
 @NgModule({
-  declarations: [PendingComponent, CompleteComponent, ProcessingComponent],
+  declarations: [PendingComponent, CompleteComponent, ProcessingComponent, DeliveringComponent],
   imports: [
     CommonModule,
     OrderRoutingModule, DashboardModule

@@ -48,12 +48,12 @@
 	                                    <td>{{item.productId}}</td>
 	                                    <td>{{item.orderReason}}</td>
 	                                    <td>{{item.quantity}}</td>
-	                                    <td>{{item.amount}}</td>
-	                                    <td>Asiedu Henry Kwasi</td>
-	                                    <td>0247049416</td>
+	                                    <td>{{item.amount*item.quantity}}</td>
+                                        <td>{{item.consumer.firstName}} {{item.consumer.lastName}}</td>
+                                        <td>{{item.consumer.phoneNumber}}</td>
                                         <td>{{item.dateCreated}}</td>
                                         <td>
-                                            <button class="btn btn-success" (click)="onComplete(item)">Complete</button>
+                                            <button class="btn btn-success" (click)="onDelivery(item)">Delivery</button>
                                         </td>
 	                                </tr> 
 	                                

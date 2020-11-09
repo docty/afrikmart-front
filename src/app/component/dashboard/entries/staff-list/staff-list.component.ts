@@ -27,7 +27,7 @@ export class StaffListComponent implements OnInit {
         showCancelButton: true,
         confirmButtonColor: '#34c38f',
         cancelButtonColor: '#f46a6a',
-        confirmButtonText: 'Yes, delete it!',
+        confirmButtonText: 'Yes, delete',
       }).then((isConfirm) => {
         if (isConfirm.value) {
           this.staffService.delete(id).subscribe(

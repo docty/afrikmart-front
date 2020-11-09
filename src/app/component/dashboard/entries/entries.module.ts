@@ -11,6 +11,7 @@ import { CustomerListComponent } from './customer-list/customer-list.component';
 import { CustomerAddComponent } from './customer-add/customer-add.component';
 import { CustomerProfileComponent } from './customer-profile/customer-profile.component';
 import { CustomerEditComponent } from './customer-edit/customer-edit.component';
+import { ConsumerListComponent } from './consumer-list/consumer-list.component';
 
 
 
@@ -20,7 +21,8 @@ import { CustomerEditComponent } from './customer-edit/customer-edit.component';
    StaffEditComponent,
    StaffProfileComponent,
    CustomerProfileComponent,
-   CustomerEditComponent],
+   CustomerEditComponent,
+   ConsumerListComponent],
   imports: [
     CommonModule,
     EntriesRoutingModule, DashboardModule, FormsModule

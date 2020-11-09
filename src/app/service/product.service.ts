@@ -19,6 +19,19 @@ export class ProductService {
     return this.httpClient.post(`${this.uri}/material`, data);
   }
 
+  showMaterial(id){
+    return this.httpClient.get(`${this.uri}/material/${id}`);
+  }
+
+  updateMaterial(id, data){ 
+    return this.httpClient.put(`${this.uri}/material/${id}`, data);
+  }
+
+  deleteMaterial(id){
+    return this.httpClient.delete(`${this.uri}/material/${id}`);
+  }
+
+  /*********************** STYLE  PROPERTIES  **********************/
   indexStyle(){
      return this.httpClient.get(`${this.uri}/style`);
   }

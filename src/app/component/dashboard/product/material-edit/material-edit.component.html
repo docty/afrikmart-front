@@ -8,12 +8,12 @@
             <div class="row">
                 <div class="col-12">
                     <div class="page-title-box d-flex align-items-center justify-content-between">
-                        <h4 class="mb-0">Add Material</h4>
+                        <h4 class="mb-0">Edit Material</h4>
 
                         <div class="page-title-right">
                             <ol class="breadcrumb m-0">
                                 <li class="breadcrumb-item"><a href="javascript: void(0);">Material</a></li>
-                                <li class="breadcrumb-item active">Add</li>
+                                <li class="breadcrumb-item active">Edit</li>
                             </ol>
                         </div>
 
@@ -140,9 +140,9 @@
 
                             <div id="addproduct-img-collapse" class="collapse" data-parent="#addproduct-accordion">
                                 <div class="p-4 border-top">
-                                    <div action="#" class="dropzone">
+                                    <form action="#" class="dropzone">
                                         <div class="fallback">
-                                            <input name="material-image" type="file" multiple="multiple" (change)="fileProgress($event)">
+                                            <input name="file" type="file" multiple="multiple">
                                         </div>
                                         <div class="dz-message needsclick">
                                             <div class="mb-3">
@@ -151,7 +151,7 @@
                                             
                                             <h4>Drop files here or click to upload.</h4>
                                         </div>
-                                    </div>
+                                    </form>
                                 </div>
                             </div>
                         </div>
@@ -216,12 +216,13 @@
             <div class="row mb-4">
                 <div class="col text-right">
                     <a href="#" class="btn btn-danger" style="margin-right: 10px"> <i class="uil uil-times mr-1"></i> Clear All </a>
-                    <a href="javascript:void(0)" (click)="onSaveMaterial()" class="btn btn-success"> <i class="uil uil-file-alt mr-1"></i> Save </a>
+                    <a href="javascript:void(0)" (click)="onUpdateMaterial()" class="btn btn-success"> <i class="uil uil-file-alt mr-1"></i> Update </a>
                     <div class="spinner-border text-secondary" style="margin: 0px 10px; display: none"  role="status">
                         <span class="sr-only">Loading...</span>
                     </div>
                 </div>
             </div>
+            
         </div>
     </div>
 </div>
