@@ -28,7 +28,6 @@
               "src/assets/css/icons.min.css",
               "src/assets/css/app-dark.min.css",
               "src/assets/libs/sweetalert2/sweetalert2.min.css",
-              "src/assets/libs/dropzone/min/dropzone.min.css",
               "src/assets/libs/select2/css/select2.min.css",
               "src/assets/css/styles.css"
             ],
@@ -44,7 +43,6 @@
                 "src/assets/libs/apexcharts/apexcharts.min.js",
                 "src/assets/libs/datatables.net/js/jquery.dataTables.min.js",
                 "src/assets/libs/datatables.net-bs4/js/dataTables.bootstrap4.min.js",
-                "src/assets/libs/dropzone/min/dropzone.min.js",
                 "src/assets/libs/select2/js/select2.min.js",
                 "src/assets/js/pages/dashboard.init.js",
                 "src/assets/js/app.js",

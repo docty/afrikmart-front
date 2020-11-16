@@ -10,12 +10,16 @@ declare var $: any;
 export class MaterialListComponent implements OnInit {
 
   data : any;
+  defaultUrl = '';
+   
   constructor(private productService: ProductService) { }
 
   ngOnInit(): void {
-  	this.productService.indexMaterial().subscribe(m => 
+    this.defaultUrl = this.productService.getURI();
+    this.productService.indexMaterial().subscribe(m => 
     {
       this.data = m;
+
       setTimeout(() => $('#datatable').DataTable(), 1000);
     });
   }

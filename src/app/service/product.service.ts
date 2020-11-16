@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
 export class ProductService {
 
   uri = 'http://127.0.0.1:8000/api';
-  
+  defaultURL = 'http://127.0.0.1:8000/images/';
 
   constructor(private httpClient: HttpClient) { }
 
@@ -17,6 +17,10 @@ export class ProductService {
 
   storeMaterial(data){
     return this.httpClient.post(`${this.uri}/material`, data);
+  }
+
+  storeMaterialImages(data){
+      return this.httpClient.post(`${this.uri}/material-images`, data);
   }
 
   showMaterial(id){
@@ -38,5 +42,10 @@ export class ProductService {
 
   storeStyle(data){
     return this.httpClient.post(`${this.uri}/style`, data);
+  }
+
+  /*********************** URL  PROPERTIES  **********************/
+  getURI(){
+    return this.defaultURL;
   }
 }

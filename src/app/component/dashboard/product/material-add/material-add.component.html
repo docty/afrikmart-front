@@ -12,7 +12,7 @@
 
                         <div class="page-title-right">
                             <ol class="breadcrumb m-0">
-                                <li class="breadcrumb-item"><a href="javascript: void(0);">Material</a></li>
+                                <li class="breadcrumb-item"><a  [routerLink]="['/v1/product/material']">Material</a></li>
                                 <li class="breadcrumb-item active">Add</li>
                             </ol>
                         </div>
@@ -140,7 +140,7 @@
 
                             <div id="addproduct-img-collapse" class="collapse" data-parent="#addproduct-accordion">
                                 <div class="p-4 border-top">
-                                    <div action="#" class="dropzone">
+                                    <!-- <div action="#" class="dropzone">
                                         <div class="fallback">
                                             <input name="material-image" type="file" multiple="multiple" (change)="fileProgress($event)">
                                         </div>
@@ -151,9 +151,17 @@
                                             
                                             <h4>Drop files here or click to upload.</h4>
                                         </div>
-                                    </div>
+                                    </div> -->
+                                    <ngx-dropzone (change)="onSelect($event)">
+                                      <ngx-dropzone-label>Drop files here or click to upload</ngx-dropzone-label>
+                                      <ngx-dropzone-preview ngProjectAs="ngx-dropzone-preview" *ngFor="let f of files" [removable]="true" (removed)="onRemove(f)" [file]>
+                                        <ngx-dropzone-label>{{ f.name }} ({{ f.size }})kb</ngx-dropzone-label>
+                                      </ngx-dropzone-preview>
+                                    </ngx-dropzone>
                                 </div>
                             </div>
+
+
                         </div>
 
                         <div class="card">
@@ -225,5 +233,4 @@
         </div>
     </div>
 </div>
-            
             

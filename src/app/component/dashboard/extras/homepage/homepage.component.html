@@ -1,0 +1,187 @@
+<app-header></app-header>
+<app-sider></app-sider>
+<div class="main-content">
+	<div class="page-content">
+        <div class="container-fluid">
+
+            <!-- start page title -->
+            <div class="row">
+                <div class="col-12">
+                    <div class="page-title-box d-flex align-items-center justify-content-between">
+                        <h4 class="mb-0">Client Homepage</h4>
+
+                        <div class="page-title-right">
+                            <ol class="breadcrumb m-0">
+                                <li class="breadcrumb-item"><a href="javascript: void(0);">Client Homepage</a></li>
+                                <li class="breadcrumb-item active">All</li>
+                            </ol>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <!-- end page title -->
+            
+            <div class="row">
+                <div class="col-lg-12">
+                    <div>
+                        <div> 
+                            <p  class=" waves-effect waves-light mb-2" style="font-size: 16px;"> Slider</p>
+                        </div>
+                        <div> 
+                            <a type="button" class="btn btn-success waves-effect waves-light mb-3" data-toggle="modal" data-target="#myModal"><i class="uil uil-plus mr-1" ></i> Add Slider</a>  
+                        </div>
+
+                        <div class="table-responsive mb-4">
+                            <table class="table table-centered datatable dt-responsive nowrap table-card-list" style="border-collapse: collapse; border-spacing: 0 12px; width: 100%;">
+                                <thead>
+                                    <tr class="bg-transparent">
+                                        <th>SN</th>
+                                        <th>Intro</th>
+                                        <th>Title</th>
+                                        <th>Message</th>
+                                        <th>SRC</th>
+                                        <th>Avatar</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let item of dataValue.slider; let i = index">
+                                        <td>{{i+1}}</td>
+                                        <td>{{item.introduction}}</td>
+                                        <td>{{item.title}} </td>
+                                        <td>{{item.message}}</td>
+                                        <td>{{item.src}}</td>
+                                        <td><img src="{{uri}}slider/{{item.avatar}}" alt="" class="avatar-xs rounded-circle mr-2"> </td>
+                                        <td>
+                                            <a href="javascript:void(0);" class="px-1 text-danger" data-toggle="tooltip" data-placement="top" title="Delete" (click)="onDelete(item.urlId)"><i class="uil uil-trash-alt font-size-18"></i></a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="spinner-border text-secondary" style="margin: 0px 10px"  role="status"><span class="sr-only">Loading...</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div>
+                        <div>
+                            <p  class=" waves-effect waves-light mb-3" style="font-size: 16px;"> Banner</p> 
+                        </div>
+                        <div> 
+                            <a type="button" class="btn btn-success waves-effect waves-light mb-3" data-toggle="modal" data-target="#myBanner"><i class="uil uil-plus mr-1" ></i> Add Banner</a>  
+                        </div>
+
+                        <div class="table-responsive mb-4">
+                            <table class="table table-centered datatable dt-responsive nowrap table-card-list" style="border-collapse: collapse; border-spacing: 0 12px; width: 100%;">
+                                <thead>
+                                    <tr class="bg-transparent">
+                                        <th>SN</th>
+                                        <th>Title</th>
+                                        <th>Price</th>
+                                        <th>SRC</th>
+                                        <th>Avatar</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let item of dataValue.banner; let i = index">
+                                        <td>{{i+1}}</td>
+                                        <td>{{item.title}} </td>
+                                        <td>{{item.price}}</td>
+                                        <td>{{item.src}}</td>
+                                        <td><img src="{{uri}}banner/{{item.avatar}}" alt="" class="avatar-xs rounded-circle mr-2"> </td>
+                                        <td>
+                                            <a href="javascript:void(0);" class="px-1 text-danger" data-toggle="tooltip" data-placement="top" title="Delete" (click)="onDelete(item.urlId)"><i class="uil uil-trash-alt font-size-18"></i></a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="spinner-border text-secondary" style="margin: 0px 10px"  role="status"><span class="sr-only">Loading...</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+            
+
+<!-- MODAL CREATION   -->
+<div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title mt-0" id="myModalLabel">Add Slider</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                	<div class="form-group">
+                		<input type="text" name="title" placeholder="Enter Title" class="form-control" [(ngModel)]="slider.title">
+                	</div>
+                	<div class="form-group">
+                		<input type="text" name="introduction" placeholder="Enter Introduction" class="form-control" [(ngModel)]="slider.introduction">
+                	</div>
+                	<div class="form-group">
+                		<input type="text" name="message" placeholder="Enter Message" class="form-control" [(ngModel)]="slider.message">
+                	</div>
+                	<div class="form-group">
+                		<ngx-dropzone (change)="onSelect($event)">
+                          <ngx-dropzone-label>Drop files here or click to upload</ngx-dropzone-label>
+                          <ngx-dropzone-preview ngProjectAs="ngx-dropzone-preview" *ngFor="let f of files" [removable]="true" (removed)="onRemove(f)" [file]>
+                            <ngx-dropzone-label>{{ f.name }} ({{ f.size }})kb</ngx-dropzone-label>
+                          </ngx-dropzone-preview>
+                        </ngx-dropzone>
+                	</div>
+                </form> 
+                    
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-light waves-effect" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary waves-effect waves-light" (click)="onSubmitSlider()">Save</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<div id="myBanner" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title mt-0" id="myModalLabel">Add Banner</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                	<div class="form-group">
+                		<input type="text" name="title" placeholder="Enter Title" class="form-control" [(ngModel)]="banner.title">
+                	</div>
+                	<div class="form-group">
+                		<input type="text" name="price" placeholder="Enter Price" class="form-control" [(ngModel)]="banner.price">
+                	</div>
+                	
+                	<div class="form-group">
+                		<ngx-dropzone (change)="onSelectBanner($event)">
+                          <ngx-dropzone-label>Drop files here or click to upload</ngx-dropzone-label>
+                          <ngx-dropzone-preview ngProjectAs="ngx-dropzone-preview" *ngFor="let f of filesBanner" [removable]="true" (removed)="onRemoveBanner(f)" [file]>
+                            <ngx-dropzone-label>{{ f.name }} ({{ f.size }})kb</ngx-dropzone-label>
+                          </ngx-dropzone-preview>
+                        </ngx-dropzone>
+                	</div>
+                </form> 
+                    
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-light waves-effect" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary waves-effect waves-light" (click)="onSubmitBanner()">Save</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div>

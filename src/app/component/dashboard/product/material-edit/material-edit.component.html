@@ -12,7 +12,7 @@
 
                         <div class="page-title-right">
                             <ol class="breadcrumb m-0">
-                                <li class="breadcrumb-item"><a href="javascript: void(0);">Material</a></li>
+                                <li class="breadcrumb-item"><a [routerLink]="['/v1/product/material']">Material</a></li>
                                 <li class="breadcrumb-item active">Edit</li>
                             </ol>
                         </div>
@@ -116,7 +116,7 @@
                             </div>
                         </div>
 
-                        <div class="card">
+                        <!-- <div class="card">
                             <a href="#addproduct-img-collapse" class="text-dark collapsed" data-toggle="collapse" aria-expanded="false" aria-controls="addproduct-img-collapse">
                                 <div class="p-4">
                                     
@@ -154,7 +154,7 @@
                                     </form>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
 
                         <div class="card">
                             <a href="#addproduct-metadata-collapse" class="text-dark collapsed" data-toggle="collapse" aria-expanded="false" aria-controls="addproduct-metadata-collapse">
@@ -164,7 +164,7 @@
                                         <div class="mr-3">
                                             <div class="avatar-xs">
                                                 <div class="avatar-title rounded-circle bg-soft-primary text-primary">
-                                                    03
+                                                    02
                                                 </div>
                                             </div>
                                         </div>
@@ -215,7 +215,7 @@
 
             <div class="row mb-4">
                 <div class="col text-right">
-                    <a href="#" class="btn btn-danger" style="margin-right: 10px"> <i class="uil uil-times mr-1"></i> Clear All </a>
+                    <!-- <a href="#" class="btn btn-danger" style="margin-right: 10px"> <i class="uil uil-times mr-1"></i> Clear All </a> -->
                     <a href="javascript:void(0)" (click)="onUpdateMaterial()" class="btn btn-success"> <i class="uil uil-file-alt mr-1"></i> Update </a>
                     <div class="spinner-border text-secondary" style="margin: 0px 10px; display: none"  role="status">
                         <span class="sr-only">Loading...</span>

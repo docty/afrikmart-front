@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgxDropzoneModule } from 'ngx-dropzone';
 import { FormsModule } from '@angular/forms';
 import { DashboardModule } from '../dashboard.module';
 import { ProductRoutingModule } from './product-routing.module';
@@ -15,7 +16,7 @@ import { MaterialEditComponent } from './material-edit/material-edit.component';
   declarations: [MaterialListComponent, MaterialAddComponent, StyleListComponent, StyleAddComponent, MaterialViewComponent, MaterialEditComponent],
   imports: [
     CommonModule,
-    ProductRoutingModule, DashboardModule, FormsModule
+    ProductRoutingModule, DashboardModule, FormsModule, NgxDropzoneModule
   ]
 })
 export class ProductModule { }

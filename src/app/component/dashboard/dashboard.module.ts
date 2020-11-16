@@ -6,13 +6,15 @@ import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
 import { SiderComponent } from './sider/sider.component';
 import { WalletComponent } from './extras/wallet/wallet.component';
-
+import { ReviewComponent } from './extras/review/review.component';
+import { HomepageComponent } from './extras/homepage/homepage.component';
+import { NgxDropzoneModule } from 'ngx-dropzone';
 
 @NgModule({
-  declarations: [HomeComponent, HeaderComponent, SiderComponent, WalletComponent],
+  declarations: [HomeComponent, HeaderComponent, SiderComponent, WalletComponent, ReviewComponent, HomepageComponent],
   imports: [
     CommonModule,
-    DashboardRoutingModule, FormsModule
+    DashboardRoutingModule, FormsModule, NgxDropzoneModule
   ],
   exports: [HeaderComponent, SiderComponent, FormsModule]
 })

@@ -10,12 +10,12 @@
             <div class="row">
                 <div class="col-12">
                     <div class="page-title-box d-flex align-items-center justify-content-between">
-                        <h4 class="mb-0">Material Detail</h4>
+                        <h4 class="mb-0">Material Details</h4>
 
                         <div class="page-title-right">
                             <ol class="breadcrumb m-0">
                                 <li class="breadcrumb-item"><a [routerLink]="['/v1/product/material']">Materials</a></li>
-                                <li class="breadcrumb-item active">Material Detail</li>
+                                <li class="breadcrumb-item active">Material Details</li>
                             </ol>
                         </div>
 
@@ -34,51 +34,31 @@
                                         <div class="row">
                                             <div class="col-3">
                                                 <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                                                    <a class="nav-link active" id="product-1-tab" data-toggle="pill" href="#product-1" role="tab">
-                                                        <img src="assets/images/product/img-1.png" alt="" class="img-fluid mx-auto d-block tab-img rounded">
+                                                    
+                                                    <a class="nav-link" id="product-{{i+1}}-tab" *ngFor="let result of imageHolder; let i = index"data-toggle="pill" href="#product-{{i+2}}" role="tab">
+                                                        <img src="{{defaultUrl}}/materials/{{result}}" alt="" class="img-fluid mx-auto d-block tab-img rounded">
                                                     </a>
-                                                    <a class="nav-link" id="product-2-tab" data-toggle="pill" href="#product-2" role="tab">
-                                                        <img src="assets/images/product/img-2.png" alt="" class="img-fluid mx-auto d-block tab-img rounded">
-                                                    </a>
-                                                    <a class="nav-link" id="product-3-tab" data-toggle="pill" href="#product-3" role="tab">
-                                                        <img src="assets/images/product/img-3.png" alt="" class="img-fluid mx-auto d-block tab-img rounded">
-                                                    </a>
-                                                    <a class="nav-link" id="product-4-tab" data-toggle="pill" href="#product-4" role="tab">
-                                                        <img src="assets/images/product/img-6.png" alt="" class="img-fluid mx-auto d-block tab-img rounded">
-                                                    </a>
+                                                    
                                                 </div>
                                             </div>
 
                                             <div class="col-9">
                                                 <div class="tab-content position-relative" id="v-pills-tabContent">
 
-                                                    <div class="product-wishlist">
-                                                        <a href="#">
-                                                            <i class="mdi mdi-heart-outline"></i>
-                                                        </a>
-                                                    </div>
+                                                     
                                                     <div class="tab-pane fade show active" id="product-1" role="tabpanel">
                                                         <div class="product-img">
-                                                            <img src="assets/images/product/img-1.png" alt="" class="img-fluid mx-auto d-block" data-zoom="assets/images/product/img-1.png">
+                                                            <img src="{{defaultUrl}}/materials/{{imageHolder[0]}}" alt="" class="img-fluid mx-auto d-block" data-zoom="assets/images/product/img-1.png">
                                                         </div>
                                                     </div>
-                                                    <div class="tab-pane fade" id="product-2" role="tabpanel">
+                                                    <div class="tab-pane fade" id="product-{{i+2}}" role="tabpanel" *ngFor="let result of imageHolder; let i = index">
                                                         <div class="product-img">
-                                                            <img src="assets/images/product/img-2.png" alt="" class="img-fluid mx-auto d-block">
+                                                            <img src="{{defaultUrl}}/materials/{{result}}" alt="" class="img-fluid mx-auto d-block">
                                                         </div>
                                                     </div>
-                                                    <div class="tab-pane fade" id="product-3" role="tabpanel">
-                                                        <div class="product-img">
-                                                            <img src="assets/images/product/img-3.png" alt="" class="img-fluid mx-auto d-block">
-                                                        </div>
-                                                    </div>
-                                                    <div class="tab-pane fade" id="product-4" role="tabpanel">
-                                                        <div class="product-img">
-                                                            <img src="assets/images/product/img-6.png" alt="" class="img-fluid mx-auto d-block">
-                                                        </div>
-                                                    </div>
+                                                     
                                                 </div>
-                                                <div class="row text-center mt-2">
+                                                <!-- <div class="row text-center mt-2">
                                                     <div class="col-sm-6">
                                                         <button type="button" class="btn btn-primary btn-block waves-effect waves-light mt-2 mr-1">
                                                             <i class="uil uil-shopping-cart-alt mr-2"></i> Add to cart
@@ -89,12 +69,13 @@
                                                             <i class="uil uil-shopping-basket mr-2"></i>Buy now
                                                         </button>
                                                     </div>
-                                                </div>
+                                                </div> -->
                                                 
                                             </div>
                                         </div>
                                     </div>
                                 </div>
+                                            
                                 <div class="col-xl-7">
                                     <div class="mt-4 mt-xl-3 pl-xl-4">
                                         <!-- <h5 class="font-size-14"><a href="#" class="text-muted">Nike</a></h5> -->
@@ -108,7 +89,7 @@
 
                                         <p class="mt-4 text-muted">{{dataValue.description}}</p>
 
-                                        <div>
+                                        <!-- <div>
                                             <div class="row">
                                                 <div class="col-md-6">
                                                     <div class="mt-3">
@@ -134,11 +115,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-
-                                             
-
-                                             
-                                        </div>
+                                        </div> -->
                                     </div>
                                 </div>
                             </div>
@@ -155,7 +132,10 @@
                                           <a class="nav-link active" id="specifi-tab" data-toggle="tab" href="#specifi" role="tab">Specifications</a>
                                         </li>
                                         <li class="nav-item">
-                                          <a class="nav-link " id="detail-tab" data-toggle="tab" href="#detail" role="tab">Details</a>
+                                          <a class="nav-link " id="detail-tab" data-toggle="tab" href="#detail" role="tab">Customer</a>
+                                        </li>
+                                        <li class="nav-item">
+                                          <a class="nav-link " id="market-tab" data-toggle="tab" href="#market" role="tab">Market</a>
                                         </li>
                                     </ul>
                                     <div class="tab-content border border-top-0 p-4">
@@ -174,23 +154,23 @@
                                                     <tbody>
                                                         <tr>
                                                             <th scope="row" style="width: 20%;">Category</th>
-                                                            <td>Shoes</td>
+                                                            <td>{{dataValue.category}}</td>
                                                         </tr>
                                                         <tr>
                                                             <th scope="row">Brand</th>
-                                                            <td>Nike</td>
+                                                            <td>{{dataValue.manufacturerBrand}}</td>
                                                         </tr>
-                                                        <tr>
+                                                        <!-- <tr>
                                                             <th scope="row">Color</th>
                                                             <td>Gray</td>
-                                                        </tr>
+                                                        </tr> -->
                                                         <tr>
                                                             <th scope="row">Quality</th>
                                                             <td>High</td>
                                                         </tr>
                                                         <tr>
-                                                            <th scope="row">Material</th>
-                                                            <td>Leather</td>
+                                                            <th scope="row">Tag</th>
+                                                            <td>{{dataValue.tag}}</td>
                                                         </tr>
                                                         
                                                     </tbody>
@@ -217,6 +197,27 @@
                                                 </table>
                                             </div>
                                         </div>
+                                        <div class="tab-pane fade show " id="market" role="tabpanel">
+                                            <div class="table-responsive">
+                                                <table class="table table-nowrap mb-0">
+                                                    <tbody>
+                                                        <tr>
+                                                            <th scope="row" style="width: 20%;">Market ID</th>
+                                                            <td>{{dataValue.market.marketId}}</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th scope="row">Market Name</th>
+                                                            <td>{{dataValue.market.marketName | titlecase}}</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th scope="row">Market Location</th>
+                                                            <td>{{dataValue.market.location | titlecase}}</td>
+                                                        </tr>
+                                                         
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -224,68 +225,19 @@
                             <div class="mt-4">
                                 <h5 class="font-size-14 mb-3">Reviews : </h5>
                                 <div class="text-muted mb-3">
-                                    <span class="badge badge-success font-size-14 mr-1"><i class="mdi mdi-star"></i> 4.2</span> 234 Reviews
+                                     {{dataValue.review.length}} Reviews
                                 </div>
                                 <div class="border p-4 rounded">
-                                    <div class="border-bottom pb-3">
-                                        <p class="float-sm-right text-muted font-size-13">12 July, 2020</p>
-                                        <div class="badge badge-success mb-2"><i class="mdi mdi-star"></i> 4.1</div>
-                                        <p class="text-muted mb-4">It will be as simple as in fact, it will be Occidental. It will seem like simplified</p>
+                                    <div class="border-bottom pt-4 pb-3" *ngFor="let review of dataValue.review">
+                                        <p class="float-sm-right text-muted font-size-13">{{review.dateCreated}}</p>
+                                         
+                                        <p class="text-muted mb-4">{{review.comment}}</p>
                                         <div class="media">
                                             <div class="media-body">
-                                                <h5 class="font-size-15 mb-0">Samuel</h5>
+                                                <h5 class="font-size-15 mb-0">{{review.name}} ({{review.email}})</h5>
                                             </div>
 
-                                            <ul class="list-inline product-review-link mb-0">
-                                                <li class="list-inline-item" data-toggle="tooltip" data-placement="top" title="Like">
-                                                    <a href="#"><i class="uil uil-thumbs-up"></i></a>
-                                                </li>
-                                                <li class="list-inline-item" data-toggle="tooltip" data-placement="top" title="Comment">
-                                                    <a href="#"><i class="uil uil-comment-alt-message"></i></a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        
-                                    </div>
-
-                                    <div class="border-bottom py-3">
-                                        <p class="float-sm-right text-muted font-size-13">06 July, 2020</p>
-                                        <div class="badge badge-success mb-2"><i class="mdi mdi-star"></i> 4.0</div>
-                                        <p class="text-muted mb-4">Sed ut perspiciatis unde omnis iste natus error sit</p>
-                                        <div class="media">
-                                            <div class="media-body">
-                                                <h5 class="font-size-15 mb-0">Joseph</h5>
-                                            </div>
-
-                                            <ul class="list-inline product-review-link mb-0">
-                                                <li class="list-inline-item" data-toggle="tooltip" data-placement="top" title="Like">
-                                                    <a href="#"><i class="uil uil-thumbs-up"></i></a>
-                                                </li>
-                                                <li class="list-inline-item" data-toggle="tooltip" data-placement="top" title="Comment">
-                                                    <a href="#"><i class="uil uil-comment-alt-message"></i></a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        
-                                    </div>
-
-                                    <div class="border-bottom py-3">
-                                        <p class="float-sm-right text-muted font-size-13">26 June, 2020</p>
-                                        <div class="badge badge-success mb-2"><i class="mdi mdi-star"></i> 4.2</div>
-                                        <p class="text-muted mb-4">Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet</p>
-                                        <div class="media">
-                                            <div class="media-body">
-                                                <h5 class="font-size-15 mb-0">Paul</h5>
-                                            </div>
-
-                                            <ul class="list-inline product-review-link mb-0">
-                                                <li class="list-inline-item" data-toggle="tooltip" data-placement="top" title="Like">
-                                                    <a href="#"><i class="uil uil-thumbs-up"></i></a>
-                                                </li>
-                                                <li class="list-inline-item" data-toggle="tooltip" data-placement="top" title="Comment">
-                                                    <a href="#"><i class="uil uil-comment-alt-message"></i></a>
-                                                </li>
-                                            </ul>
+                                            
                                         </div>
                                         
                                     </div>

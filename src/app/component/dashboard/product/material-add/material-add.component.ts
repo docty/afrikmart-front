@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ProductMaterial} from '../../../../model/productMaterial.model';
 import {ProductService} from '../../../../service/product.service';
+
 import {Router} from '@angular/router';
 declare var $: any;
 
@@ -33,49 +34,61 @@ export class MaterialAddComponent implements OnInit {
     customerId: ''
   }
 
-  fileData: File[] = [];
+  
+  
+  files: File[] = [];
+  formData = new FormData();
 
   constructor(private productService: ProductService, private router: Router) { }
 
   ngOnInit(): void {
   	$(".select2").select2();
-    $(".dropzone").dropzone();
+    
   }
 
+  onSelect(event) {
+        this.files.push(...event.addedFiles);
+        this.formData = new FormData();
+    
+        for (var i = 0; i < this.files.length; i++) { 
+          this.formData.append("file[]", this.files[i]);
+        }
+   
+        
+    }
+  
+    onRemove(event) {
+        console.log(event);
+        this.files.splice(this.files.indexOf(event), 1);
+    }
   onSaveMaterial(){
     $('.spinner-border').css('display', 'inline-block');
     this.dataValue.category  = $('#category').val();
     this.dataValue.tag  = $('#tag').val();
+    this.formData.append('customerId', this.dataValue.customerId);
     this.productService.storeMaterial(this.dataValue).subscribe(
       (data: any) => {
           if(data.error){
             $('.spinner-border').css('display', 'none');
             this.errorMessage = data.error;
           }else{
+            this.formData.append('productId', data.productId);
+            this.onSubmitProfile();
             this.router.navigateByUrl('/v1/product/material');
           }
       }
     );
-    // this.onSubmitProfile();
+    
   }
 
-  fileProgress(event){
-    console.log(event);
-    this.fileData.push(...event.addedFiles);// = fileInput.target.files[0];
-    const formData = new FormData();
-    for (var i = 0; i < this.fileData.length; i++) {
-       formData.append("files[]", this.fileData[i]);
-     }
-     console.log(formData);
-  }
-
+   
   onSubmitProfile(){
-     console.log(this.fileData);
-    // formData.append('clientId', this.data.clientId);
-    // this.clientService.uploadProfile(formData).subscribe(
-    //   arg => console.log(arg)
-    //   );
+    this.productService.storeMaterialImages(this.formData).subscribe(
+      (data: any) => {
+          // console.log(data);
+      }
+    );
+     
 
   }
-
 }
