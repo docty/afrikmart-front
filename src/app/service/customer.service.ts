@@ -5,8 +5,8 @@ import { HttpClient } from '@angular/common/http';
 })
 export class CustomerService {
 
-  // uri = 'http://127.0.0.1:8000/api';
-  uri = 'https://afrikmart.herokuapp.com/api';
+   uri = 'http://127.0.0.1:8000/api';
+   
    
 
   constructor(private httpClient: HttpClient) { }
