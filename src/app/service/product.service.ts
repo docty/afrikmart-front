@@ -6,10 +6,9 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ProductService {
 
-  uri = 'http://127.0.0.1:8000/api';
-  defaultURL = 'http://127.0.0.1:8000/images/';
-
    
+  uri = 'https://afrikmart.herokuapp.com/api';
+  private defaultURL = 'https://afrikmart.herokuapp.com/images/';  
   
   constructor(private httpClient: HttpClient) { }
 
