@@ -52,7 +52,7 @@ export class HomepageComponent implements OnInit {
 
   	this.clientService.store(formData).subscribe(
   		data => {
-  			console.log(data);
+  			alert(data);
   		});
   	
   }
