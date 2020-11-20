@@ -10,7 +10,7 @@ export class ClientService {
   // uri = 'http://127.0.0.1:8000/api';
   // private defaultURL = 'http://127.0.0.1:8000/images/';
   uri = 'https://afrikmart.herokuapp.com/api';
-  private defaultURL = 'https://afrikmart.herokuapp.com/images/';
+  private defaultURL = 'https://afrikmart.herokuapp.com/images/'; 
 
   constructor(private httpClient: HttpClient) { }
 
