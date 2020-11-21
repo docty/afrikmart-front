@@ -47,20 +47,20 @@ export class MaterialAddComponent implements OnInit {
   }
 
   onSelect(event) {
-        this.files.push(...event.addedFiles);
-        this.formData = new FormData();
-    
-        for (var i = 0; i < this.files.length; i++) { 
-          this.formData.append("file[]", this.files[i]);
-        }
+    this.files.push(...event.addedFiles);
+    this.formData = new FormData();
+
+    for (var i = 0; i < this.files.length; i++) { 
+      this.formData.append("file[]", this.files[i]);
+    }
    
         
-    }
+  }
   
     onRemove(event) {
-        console.log(event);
         this.files.splice(this.files.indexOf(event), 1);
     }
+    
   onSaveMaterial(){
     $('.spinner-border').css('display', 'inline-block');
     this.dataValue.category  = $('#category').val();

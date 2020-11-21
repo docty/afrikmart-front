@@ -13,14 +13,14 @@ export class HomepageComponent implements OnInit {
   	title : '',
   	introduction : '',
   	message : '',
-  	src : 'materials/all',
+  	src : 'material/all',
   	type : 'slider'
   }
 
   banner = {
   	title : '',
   	price : '',
-  	src : 'materials/all',
+  	src : 'material/all',
   	type : 'banner'
   }
   dataValue: any;
@@ -52,7 +52,8 @@ export class HomepageComponent implements OnInit {
 
   	this.clientService.store(formData).subscribe(
   		data => {
-  			alert(data);
+  			Swal.fire('Successful', 'Item has been saved', 'success');
+        this.ngOnInit();
   		});
   	
   }
@@ -99,7 +100,8 @@ export class HomepageComponent implements OnInit {
 
 	  	this.clientService.store(formData).subscribe(
 	  		data => {
-	  			console.log(data);
+	  			Swal.fire('Successful', 'Item has been saved', 'success');
+          this.ngOnInit();
 	  		});
   	
   	}
