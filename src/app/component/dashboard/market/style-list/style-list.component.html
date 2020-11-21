@@ -59,7 +59,7 @@
                                     <a class="dropdown-item" href="#">Edit</a>
                                     <a class="dropdown-item" href="#">Delete</a>
                                 </div>
-                            </div>
+                            </div> 
                             <div class="clearfix"></div>
                             <div class="media">
                                 <div class="avatar-sm mr-4">
@@ -71,8 +71,15 @@
                                     <div class="border-bottom pb-1">
                                         <h5 class="text-truncate font-size-16 mb-1"><a href="javascript:void(0)" class="text-dark">{{item.marketName}}</a></h5>
                                         <p class="text-muted">
-                                            <i class="uil uil-briefcase mr-1"></i> {{item.customer.surname}} {{item.customer.otherName}}
+                                            Market ID: ({{item.marketId}})
                                         </p>
+                                        <p class="text-muted">
+                                            {{item.customer.surname | titlecase}} {{item.customer.otherName | titlecase}} 
+                                        </p>
+                                        <p class="text-muted">
+                                            Customer ID: ({{item.customer.customerId}})
+                                        </p>
+                                        
                                     </div>
                                     <div class="row">
                                         <div class="col-6">

@@ -41,8 +41,16 @@ export class ProductService {
      return this.httpClient.get(`${this.uri}/style`);
   }
 
+  
   storeStyle(data){
     return this.httpClient.post(`${this.uri}/style`, data);
+  }
+  storeStyleImages(data){
+      return this.httpClient.post(`${this.uri}/style-images`, data);
+  }
+
+  deleteStyle(id){
+    return this.httpClient.delete(`${this.uri}/style/${id}`);
   }
 
   /*********************** URL  PROPERTIES  **********************/
