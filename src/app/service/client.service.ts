@@ -7,9 +7,11 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ClientService {
 
+
    
   uri = 'https://afrikmart.herokuapp.com/api';
-  private defaultURL = 'https://afrikmart.herokuapp.com/images/'; 
+  private defaultURL = 'https://afrikmart.herokuapp.com/images'; 
+
 
   constructor(private httpClient: HttpClient) { }
 
