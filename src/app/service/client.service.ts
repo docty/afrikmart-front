@@ -8,7 +8,7 @@ import { HttpClient } from '@angular/common/http';
 export class ClientService {
 
    uri = 'http://127.0.0.1:8000/api';
-   private defaultURL = 'http://127.0.0.1:8000/images/';
+   private defaultURL = 'http://127.0.0.1:8000/images';
   
 
   constructor(private httpClient: HttpClient) { }

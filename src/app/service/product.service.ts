@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
 export class ProductService {
 
   uri = 'http://127.0.0.1:8000/api';
-  defaultURL = 'http://127.0.0.1:8000/images/';
+  defaultURL = 'http://127.0.0.1:8000/images';
 
    
   

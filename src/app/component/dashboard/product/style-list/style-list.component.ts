@@ -19,6 +19,8 @@ export class StyleListComponent implements OnInit {
   	this.productService.indexStyle().subscribe(m => 
     {
       this.data = m;
+      console.log(this.data);
+
       setTimeout(() => $('#datatable').DataTable(), 1000);
     });
   	
