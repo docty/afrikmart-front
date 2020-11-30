@@ -48,6 +48,13 @@ export class ProductService {
   storeStyleImages(data){
       return this.httpClient.post(`${this.uri}/style-images`, data);
   }
+  showStyle(id){
+    return this.httpClient.get(`${this.uri}/style/${id}`);
+  }
+
+  updateStyle(id, data){ 
+    return this.httpClient.put(`${this.uri}/style/${id}`, data);
+  }
 
   deleteStyle(id){
     return this.httpClient.delete(`${this.uri}/style/${id}`);

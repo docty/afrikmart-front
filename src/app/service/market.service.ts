@@ -13,6 +13,7 @@ export class MarketService {
 
   constructor(private httpClient: HttpClient) { }
 
+  /*************  MATERIAL     *************************/
   indexMaterial(){
      return this.httpClient.get(`${this.uri}/market-material`);
   }
@@ -25,11 +26,15 @@ export class MarketService {
       return this.httpClient.get(`${this.uri}/market-material/${id}`);
   }
 
-  
   updateMaterial(id, data){ 
     return this.httpClient.put(`${this.uri}/market-material/${id}`, data);
   }
 
+  deleteMaterial(id){
+    return this.httpClient.delete(`${this.uri}/market-material/${id}`);
+  }
+
+  /*************  STYLE     *************************/
   indexStyle(){
      return this.httpClient.get(`${this.uri}/market-style`);
   }
@@ -38,13 +43,25 @@ export class MarketService {
     return this.httpClient.post(`${this.uri}/market-style`, data);
   }
 
-  deleteMaterial(id){
-    return this.httpClient.delete(`${this.uri}/market-material/${id}`);
+  showStyle(id){
+      return this.httpClient.get(`${this.uri}/market-style/${id}`);
   }
-  
+
+  updateStyle(id, data){ 
+    return this.httpClient.put(`${this.uri}/market-style/${id}`, data);
+  }
+
+  deleteStyle(id){
+    return this.httpClient.delete(`${this.uri}/market-style/${id}`);
+  }
+
+  /*************  OTHERS     *************************/
+
   Storewallet(data){
     return this.httpClient.post(`${this.uri}/customer-wallet`, data);
   }
+
+
 
   getWallet(id){
     return this.httpClient.get(`${this.uri}/customer-wallet/${id}`);
