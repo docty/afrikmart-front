@@ -55,9 +55,9 @@
                                 </a>
                               
                                 <div class="dropdown-menu dropdown-menu-right">
-                                    <a class="dropdown-item" href="#">View</a>
-                                    <a class="dropdown-item" href="#">Edit</a>
-                                    <a class="dropdown-item" href="#">Delete</a>
+                                    <a class="dropdown-item" [routerLink]="['/v1/market/style', item.urlId]">View</a>
+                                    <a class="dropdown-item" [routerLink]="['/v1/market/style', item.urlId, 'edit']">Edit</a>
+                                    <a class="dropdown-item" href="javascript:void(0)" (click)="onDelete(item.urlId)">Delete</a>
                                 </div>
                             </div> 
                             <div class="clearfix"></div>

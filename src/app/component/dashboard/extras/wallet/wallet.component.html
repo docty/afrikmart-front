@@ -45,7 +45,14 @@
 		                        <tbody>
 		                        	<tr *ngFor="let item of data; let i = index">
 		                        		<td>{{data.length - i}}</td>
-		                                <td>{{item.market.marketName}} ({{item.marketId}})</td>
+										<td *ngIf="item.market == null; else templateName">
+											{{item.style.marketName}} ({{item.marketId}})
+										</td>
+										<ng-template #templateName>
+											<td>
+												{{item.market.marketName}} ({{item.marketId}})
+											</td>
+										</ng-template>
 		                                <td>{{item.deposit}}</td>
 		                                <td>{{item.withdrawal}}</td>
 		                                <td>{{item.balance}}</td>

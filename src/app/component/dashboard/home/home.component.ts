@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {DashboardService} from '../../../service/dashboard.service'; 
 declare var $: any;
 @Component({
   selector: 'app-home',
@@ -7,10 +8,13 @@ declare var $: any;
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  
+  dataValue: any;
+  constructor(private dashboardService: DashboardService) { }
 
   ngOnInit(): void {
-  	$('h4 > span').counterUp();
+  	this.dashboardService.index().subscribe(data => {this.dataValue = data; console.log(this.dataValue);});
+  	//$('h4 > span').counterUp();
   }
 
 }

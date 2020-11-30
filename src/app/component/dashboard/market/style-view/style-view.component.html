@@ -1,0 +1,139 @@
+<app-header></app-header>
+<app-sider></app-sider>
+<div class="main-content">
+	<div class="page-content">
+        <div class="container-fluid">
+        	<!-- start page title -->
+            <div class="row">
+                <div class="col-12">
+                    <div class="page-title-box d-flex align-items-center justify-content-between">
+                        <h4 class="mb-0">Style Market Profile</h4>
+
+                        <div class="page-title-right">
+                            <ol class="breadcrumb m-0">
+                                <li class="breadcrumb-item"><a href="javascript: void(0);">Style Market Profile</a></li>
+                                <li class="breadcrumb-item active">All</li>
+                            </ol>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <!-- end page title -->
+
+            <div class="row mb-4">
+                <div class="col-xl-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <div class="text-center">
+                                <div>
+                                    <img src="assets/images/users/avatar-4.jpg" alt="" class="avatar-lg rounded-circle img-thumbnail">
+                                </div>
+                                <h5 class="mt-3 mb-1">{{dataValue.customer.surname | titlecase}} {{dataValue.customer.otherName | titlecase}} ({{dataValue.customerId}})</h5>
+                                <p class="text-muted">{{dataValue.marketName}} ({{dataValue.marketId}})</p>
+                                <p class="text-muted">Location: {{dataValue.location}}</p>
+                                <p class="text-muted">Employees Number: {{dataValue.noEmployees}}</p>
+                                <p class="text-muted">Joined On: {{dataValue.dateCreated}}</p>
+
+                                
+                            </div>
+
+                            
+
+                             
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-8">
+                	<div class="row">
+                        <div class="col-md-4 col-xl-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="float-right mt-2">
+                                        <div id="total-revenue-chart"></div>
+                                    </div>
+                                    <div>
+                                        <h6 class="mb-1 mt-1">&#8373; <span data-plugin="counterup">{{dataValue.totalDeposit}}</span></h6>
+                                        <p class="text-muted mb-0">Deposit</p>
+                                    </div>
+                                    <p class="text-muted mt-3 mb-0"><span class="text-success mr-1"><i class="mdi mdi-arrow-up-bold ml-1"></i>2.65%</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div> <!-- end col-->
+
+                        <div class="col-md-4 col-xl-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="float-right mt-2">
+                                        <div id="orders-chart"> </div>
+                                    </div>
+                                    <div>
+                                        <h6 class="mb-1 mt-1">&#8373; <span data-plugin="counterup">{{dataValue.totalWithdrawal}}</span></h6>
+                                        <p class="text-muted mb-0">Withdrawal</p>
+                                    </div>
+                                    <p class="text-muted mt-3 mb-0"><span class="text-danger mr-1"><i class="mdi mdi-arrow-down-bold ml-1"></i>0.82%</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div> <!-- end col-->
+
+                        <div class="col-md-4 col-xl-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="float-right mt-2">
+                                        <div id="customers-chart"> </div>
+                                    </div>
+                                    <div>
+                                        <h6 class="mb-1 mt-1">&#8373; <span data-plugin="counterup">{{dataValue.totalDeposit  -  dataValue.totalWithdrawal}}</span></h6>
+                                        <p class="text-muted mb-0">Balance</p>
+                                    </div>
+                                    <p class="text-muted mt-3 mb-0"><span class="text-danger mr-1"><i class="mdi mdi-arrow-down-bold ml-1"></i>6.24%</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div> <!-- end col-->
+
+                            
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div>
+                        <div>
+                            <p>Wallet Transaction </p>
+                        </div>
+
+                        <div class="table-responsive mb-4">
+                            <table class="table table-centered datatable dt-responsive nowrap table-card-list" style="border-collapse: collapse; border-spacing: 0 12px; width: 100%;">
+                                <thead>
+                                    <tr class="bg-transparent">
+                                        <th>SN</th>
+                                        <th>Deposit</th>
+                                        <th>Withdrawal</th>
+                                        <th>Balance</th>
+                                        <th>Date</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let item of dataValue.customer_wallet; let i = index">
+                                        <td>{{i+1}} </td>
+                                        <td> {{item.deposit}} </td>
+                                        <td>{{item.withdrawal}}</td>
+                                        <td>{{dataValue.balance[i]}} </td>
+                                        <td>{{item.dateCreated}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="spinner-border text-secondary" style="margin: 0px 10px"  role="status"><span class="sr-only">Loading...</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

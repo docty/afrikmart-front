@@ -7,7 +7,8 @@ import { MaterialEditComponent } from './material-edit/material-edit.component';
 
 import { StyleListComponent } from './style-list/style-list.component';
 import { StyleAddComponent } from './style-add/style-add.component';
-
+import { StyleViewComponent } from './style-view/style-view.component';
+import { StyleEditComponent } from './style-edit/style-edit.component';
 
 
 const routes: Routes = [
@@ -16,7 +17,9 @@ const routes: Routes = [
 	{path: 'material/:url', component: MaterialViewComponent},
 	{path: 'material/:url/edit', component: MaterialEditComponent},
 	{path: 'style', component: StyleListComponent},
-	{path: 'style/add', component: StyleAddComponent}
+	{path: 'style/add', component: StyleAddComponent},
+	{path: 'style/:url', component: StyleViewComponent},
+	{path: 'style/:url/edit', component: StyleEditComponent},
 ];
 
 @NgModule({

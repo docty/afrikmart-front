@@ -8,10 +8,14 @@ import { MaterialAddComponent } from './material-add/material-add.component';
 import { StyleAddComponent } from './style-add/style-add.component';
 import { MaterialViewComponent } from './material-view/material-view.component';
 import { MaterialEditComponent } from './material-edit/material-edit.component';
+import { StyleViewComponent } from './style-view/style-view.component';
+import { StyleEditComponent } from './style-edit/style-edit.component';
 
 
 @NgModule({
-  declarations: [MaterialListComponent, StyleListComponent, MaterialAddComponent, StyleAddComponent, MaterialViewComponent, MaterialEditComponent],
+  declarations: [MaterialListComponent, StyleListComponent, MaterialAddComponent, 
+  StyleAddComponent, MaterialViewComponent, MaterialEditComponent, StyleViewComponent, 
+  StyleEditComponent],
   imports: [
     CommonModule,
     MarketRoutingModule, DashboardModule
