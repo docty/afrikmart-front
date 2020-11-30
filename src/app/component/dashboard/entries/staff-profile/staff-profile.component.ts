@@ -17,6 +17,10 @@ export class StaffProfileComponent implements OnInit {
     email: '',
     gender: ''
   };
+
+  files: File[] = [];
+  formData = new FormData();
+
   constructor(private route: ActivatedRoute, private staffService: StaffService) { }
 
   ngOnInit(): void {
@@ -27,5 +31,21 @@ export class StaffProfileComponent implements OnInit {
       data => {this.dataValue = data;}
     );
   }
+
+
+  onSelect(event) {
+    this.files.push(...event.addedFiles);
+    this.formData = new FormData();
+
+    for (var i = 0; i < this.files.length; i++) { 
+      this.formData.append("file[]", this.files[i]);
+    }
+   
+        
+  }
+  
+    onRemove(event) {
+        this.files.splice(this.files.indexOf(event), 1);
+    }
 
 }

@@ -12,7 +12,7 @@ import { CustomerProfileComponent } from './customer-profile/customer-profile.co
 import { CustomerEditComponent } from './customer-edit/customer-edit.component';
 
 import { ConsumerListComponent } from './consumer-list/consumer-list.component';
-
+import { ConsumerProfileComponent } from './consumer-profile/consumer-profile.component';
 
 const routes: Routes = [
 	{path: 'staff', component: StaffListComponent},
@@ -24,6 +24,7 @@ const routes: Routes = [
 	{path: 'customer/:url/edit', component: CustomerEditComponent},
 	{path: 'customer/:url', component: CustomerProfileComponent},
 	{path: 'consumer', component: ConsumerListComponent},
+	{path: 'consumer/:url', component: ConsumerProfileComponent},
 ];
 
 @NgModule({

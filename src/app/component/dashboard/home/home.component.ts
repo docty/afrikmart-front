@@ -9,12 +9,20 @@ declare var $: any;
 export class HomeComponent implements OnInit {
 
   
-  dataValue: any;
+  dataValue: any = {
+  	marketMaterial: 0,
+  	marketStyle: 0,
+  	material: 0,
+  	style : 0
+  }
   constructor(private dashboardService: DashboardService) { }
 
   ngOnInit(): void {
-  	this.dashboardService.index().subscribe(data => {this.dataValue = data; console.log(this.dataValue);});
-  	//$('h4 > span').counterUp();
+  	this.dashboardService.index().subscribe(data => {
+		this.dataValue = data; 
+		$('h4 > span').counterUp();
+  	});
+  	
   }
 
 }
