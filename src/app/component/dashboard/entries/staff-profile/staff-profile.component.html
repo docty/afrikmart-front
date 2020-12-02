@@ -92,7 +92,12 @@
 	                            
 	                        </div>
 	                        <div class="tab-pane" id="messages" role="tabpanel">
-	                            
+	                             <ngx-dropzone (change)="onSelect($event)">
+                                      <ngx-dropzone-label>Drop files here or click to upload</ngx-dropzone-label>
+                                      <ngx-dropzone-preview ngProjectAs="ngx-dropzone-preview" *ngFor="let f of files" [removable]="true" (removed)="onRemove(f)" [file]>
+                                        <ngx-dropzone-label>{{ f.name }} ({{ f.size }})kb</ngx-dropzone-label>
+                                      </ngx-dropzone-preview>
+                                    </ngx-dropzone>
 	                        </div>
 	                    </div>
 	                </div>
